@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Readability Test - Dyslexia Study</title>
+    <style>
+        /* Import the font variants */
+        @font-face {
+            font-family: 'SampleA';
+            src: url('font/variants/ODx-Font3_WordSpace.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'SampleB';
+            src: url('font/variants/ODx-Font1_Control.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'SampleC';
+            src: url('font/variants/ODx-Font5_Combination.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'SampleD';
+            src: url('font/variants/ODx-Font2_LetterSpace.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'SampleE';
+            src: url('font/variants/ODx-Font4_LineHeight.otf') format('opentype');
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-size: 16pt;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            padding: 0.75in;
+            margin: 0 auto;
+            background: white;
+            page-break-after: always;
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        h1 {
+            font-family: Arial, sans-serif;
+            font-size: 18pt;
+            text-align: center;
+            margin-bottom: 0.5in;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        
+        .sample-label {
+            font-family: Arial, sans-serif;
+            font-size: 14pt;
+            font-weight: bold;
+            text-align: center;
+            background: #f0f0f0;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        .passage {
+            text-align: left;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+        }
+        
+        .passage-a { font-family: 'SampleA', sans-serif; }
+        .passage-b { font-family: 'SampleB', sans-serif; }
+        .passage-c { font-family: 'SampleC', sans-serif; }
+        .passage-d { font-family: 'SampleD', sans-serif; }
+        .passage-e { font-family: 'SampleE', sans-serif; }
+        
+        .instructions {
+            font-family: Arial, sans-serif;
+            font-size: 12pt;
+            background: #ffffd0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        
+        .instructions h2 {
+            margin-top: 0;
+            font-size: 14pt;
+        }
+        
+        .scoring-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            margin-top: 20px;
+        }
+        
+        .scoring-table th, .scoring-table td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .scoring-table th {
+            background: #e0e0e0;
+        }
+        
+        .score-box {
+            width: 40px;
+            height: 30px;
+        }
+        
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 10pt;
+            margin-top: 15px;
+        }
+        
+        .rubric-table th, .rubric-table td {
+            border: 1px solid #333;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        .rubric-table th {
+            background: #d0d0d0;
+            text-align: center;
+        }
+        
+        .cover-page {
+            text-align: center;
+            padding-top: 2in;
+        }
+        
+        .cover-page h1 {
+            font-size: 24pt;
+            border: none;
+        }
+        
+        .cover-page p {
+            font-family: Arial, sans-serif;
+            font-size: 14pt;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .page {
+                margin: 0;
+                padding: 0.5in;
+                border: none;
+                box-shadow: none;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        @media screen {
+            .page {
+                border: 1px solid #ccc;
+                margin: 20px auto;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cover Page with Instructions -->
+<div class="page cover-page">
+    <h1>Font Readability Test</h1>
+    <h2 style="font-family: Arial; font-size: 16pt;">Dyslexia Optimization Study - Phase 1</h2>
+    
+    <div class="instructions" style="text-align: left; margin-top: 1in;">
+        <h2>Instructions for John</h2>
+        <ol>
+            <li><strong>Read each passage</strong> - There are 5 samples (A through E), each showing the same text in a different font style.</li>
+            <li><strong>Take your time</strong> - Read at a comfortable pace. This is not a speed test.</li>
+            <li><strong>Rate each sample</strong> - After reading, score how easy or difficult it was to read on a scale of 1-10.</li>
+            <li><strong>Use the rubric</strong> - The scoring guide is on the last page. Sample B is the baseline (OpenDyslexic = 5).</li>
+            <li><strong>Be honest</strong> - There are no right or wrong answers. We want your genuine experience.</li>
+        </ol>
+        
+        <h2 style="margin-top: 20px;">Scoring Scale (1-10)</h2>
+        <table class="rubric-table">
+            <tr>
+                <th>Score</th>
+                <th>Meaning</th>
+            </tr>
+            <tr>
+                <td style="text-align:center"><strong>1-2</strong></td>
+                <td>Very difficult to read, causes significant strain or confusion</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><strong>3-4</strong></td>
+                <td>Harder to read than usual, requires extra effort</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; background:#ffffd0"><strong>5</strong></td>
+                <td style="background:#ffffd0"><strong>Baseline (OpenDyslexic) - Your current comfortable level</strong></td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><strong>6-7</strong></td>
+                <td>Noticeably easier than baseline, comfortable</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><strong>8-9</strong></td>
+                <td>Significantly easier, very comfortable reading</td>
+            </tr>
+            <tr>
+                <td style="text-align:center"><strong>10</strong></td>
+                <td>Ideal - effortless reading experience</td>
+            </tr>
+        </table>
+    </div>
+    
+    <p style="margin-top: 1in; font-size: 12pt;">Date: _____________ &nbsp;&nbsp;&nbsp; Time Started: _____________</p>
+</div>
+
+<!-- Sample A -->
+<div class="page">
+    <div class="sample-label">SAMPLE A</div>
+    <div class="passage passage-a">
+        <p>Max was a small brown dog who lived on a farm. Every morning, he would wake up early and run outside to play. He loved to chase the chickens around the yard. The chickens would cluck and flap their wings, but Max never hurt them. He just wanted to have fun.</p>
+        
+        <p>One sunny day, Max found a big red ball near the barn. He picked it up in his mouth and ran to show his best friend, a cat named Whiskers. Whiskers was sleeping in the hay, but she woke up when Max dropped the ball at her feet.</p>
+        
+        <p>"Do you want to play?" Max asked with his tail wagging fast. Whiskers stretched and yawned. She was not sure about the ball, but she liked Max. So she gave the ball a little tap with her paw. It rolled away, and both friends chased after it together.</p>
+        
+        <p>They played until the sun went down. Then they walked back to the farmhouse side by side. Max was happy. He had a good friend and a fun day. That night, they both slept very well.</p>
+    </div>
+    
+    <div class="instructions">
+        <strong>After reading, rate this sample:</strong><br>
+        How easy was this to read? (Circle one)<br><br>
+        <span style="font-size: 14pt;">
+        1 &nbsp;&nbsp; 2 &nbsp;&nbsp; 3 &nbsp;&nbsp; 4 &nbsp;&nbsp; <strong>5</strong> &nbsp;&nbsp; 6 &nbsp;&nbsp; 7 &nbsp;&nbsp; 8 &nbsp;&nbsp; 9 &nbsp;&nbsp; 10
+        </span><br>
+        <small>(Harder) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Baseline) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Easier)</small>
+        <br><br>
+        Notes (optional): _________________________________________________
+    </div>
+</div>
+
+<!-- Sample B (Control/Baseline) -->
+<div class="page">
+    <div class="sample-label">SAMPLE B (Baseline Reference)</div>
+    <div class="passage passage-b">
+        <p>Max was a small brown dog who lived on a farm. Every morning, he would wake up early and run outside to play. He loved to chase the chickens around the yard. The chickens would cluck and flap their wings, but Max never hurt them. He just wanted to have fun.</p>
+        
+        <p>One sunny day, Max found a big red ball near the barn. He picked it up in his mouth and ran to show his best friend, a cat named Whiskers. Whiskers was sleeping in the hay, but she woke up when Max dropped the ball at her feet.</p>
+        
+        <p>"Do you want to play?" Max asked with his tail wagging fast. Whiskers stretched and yawned. She was not sure about the ball, but she liked Max. So she gave the ball a little tap with her paw. It rolled away, and both friends chased after it together.</p>
+        
+        <p>They played until the sun went down. Then they walked back to the farmhouse side by side. Max was happy. He had a good friend and a fun day. That night, they both slept very well.</p>
+    </div>
+    
+    <div class="instructions">
+        <strong>This is the BASELINE (Score = 5)</strong><br>
+        This is standard OpenDyslexic. Compare other samples to this one.<br><br>
+        <span style="font-size: 14pt;">
+        1 &nbsp;&nbsp; 2 &nbsp;&nbsp; 3 &nbsp;&nbsp; 4 &nbsp;&nbsp; <strong style="background:#ffffd0; padding: 2px 8px;">5</strong> &nbsp;&nbsp; 6 &nbsp;&nbsp; 7 &nbsp;&nbsp; 8 &nbsp;&nbsp; 9 &nbsp;&nbsp; 10
+        </span><br>
+        <small>(Harder than this) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Same) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Easier than this)</small>
+        <br><br>
+        Notes (optional): _________________________________________________
+    </div>
+</div>
+
+<!-- Sample C -->
+<div class="page">
+    <div class="sample-label">SAMPLE C</div>
+    <div class="passage passage-c">
+        <p>Max was a small brown dog who lived on a farm. Every morning, he would wake up early and run outside to play. He loved to chase the chickens around the yard. The chickens would cluck and flap their wings, but Max never hurt them. He just wanted to have fun.</p>
+        
+        <p>One sunny day, Max found a big red ball near the barn. He picked it up in his mouth and ran to show his best friend, a cat named Whiskers. Whiskers was sleeping in the hay, but she woke up when Max dropped the ball at her feet.</p>
+        
+        <p>"Do you want to play?" Max asked with his tail wagging fast. Whiskers stretched and yawned. She was not sure about the ball, but she liked Max. So she gave the ball a little tap with her paw. It rolled away, and both friends chased after it together.</p>
+        
+        <p>They played until the sun went down. Then they walked back to the farmhouse side by side. Max was happy. He had a good friend and a fun day. That night, they both slept very well.</p>
+    </div>
+    
+    <div class="instructions">
+        <strong>After reading, rate this sample:</strong><br>
+        How easy was this to read compared to Sample B? (Circle one)<br><br>
+        <span style="font-size: 14pt;">
+        1 &nbsp;&nbsp; 2 &nbsp;&nbsp; 3 &nbsp;&nbsp; 4 &nbsp;&nbsp; <strong>5</strong> &nbsp;&nbsp; 6 &nbsp;&nbsp; 7 &nbsp;&nbsp; 8 &nbsp;&nbsp; 9 &nbsp;&nbsp; 10
+        </span><br>
+        <small>(Harder) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Baseline) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Easier)</small>
+        <br><br>
+        Notes (optional): _________________________________________________
+    </div>
+</div>
+
+<!-- Sample D -->
+<div class="page">
+    <div class="sample-label">SAMPLE D</div>
+    <div class="passage passage-d">
+        <p>Max was a small brown dog who lived on a farm. Every morning, he would wake up early and run outside to play. He loved to chase the chickens around the yard. The chickens would cluck and flap their wings, but Max never hurt them. He just wanted to have fun.</p>
+        
+        <p>One sunny day, Max found a big red ball near the barn. He picked it up in his mouth and ran to show his best friend, a cat named Whiskers. Whiskers was sleeping in the hay, but she woke up when Max dropped the ball at her feet.</p>
+        
+        <p>"Do you want to play?" Max asked with his tail wagging fast. Whiskers stretched and yawned. She was not sure about the ball, but she liked Max. So she gave the ball a little tap with her paw. It rolled away, and both friends chased after it together.</p>
+        
+        <p>They played until the sun went down. Then they walked back to the farmhouse side by side. Max was happy. He had a good friend and a fun day. That night, they both slept very well.</p>
+    </div>
+    
+    <div class="instructions">
+        <strong>After reading, rate this sample:</strong><br>
+        How easy was this to read compared to Sample B? (Circle one)<br><br>
+        <span style="font-size: 14pt;">
+        1 &nbsp;&nbsp; 2 &nbsp;&nbsp; 3 &nbsp;&nbsp; 4 &nbsp;&nbsp; <strong>5</strong> &nbsp;&nbsp; 6 &nbsp;&nbsp; 7 &nbsp;&nbsp; 8 &nbsp;&nbsp; 9 &nbsp;&nbsp; 10
+        </span><br>
+        <small>(Harder) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Baseline) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Easier)</small>
+        <br><br>
+        Notes (optional): _________________________________________________
+    </div>
+</div>
+
+<!-- Sample E -->
+<div class="page">
+    <div class="sample-label">SAMPLE E</div>
+    <div class="passage passage-e">
+        <p>Max was a small brown dog who lived on a farm. Every morning, he would wake up early and run outside to play. He loved to chase the chickens around the yard. The chickens would cluck and flap their wings, but Max never hurt them. He just wanted to have fun.</p>
+        
+        <p>One sunny day, Max found a big red ball near the barn. He picked it up in his mouth and ran to show his best friend, a cat named Whiskers. Whiskers was sleeping in the hay, but she woke up when Max dropped the ball at her feet.</p>
+        
+        <p>"Do you want to play?" Max asked with his tail wagging fast. Whiskers stretched and yawned. She was not sure about the ball, but she liked Max. So she gave the ball a little tap with her paw. It rolled away, and both friends chased after it together.</p>
+        
+        <p>They played until the sun went down. Then they walked back to the farmhouse side by side. Max was happy. He had a good friend and a fun day. That night, they both slept very well.</p>
+    </div>
+    
+    <div class="instructions">
+        <strong>After reading, rate this sample:</strong><br>
+        How easy was this to read compared to Sample B? (Circle one)<br><br>
+        <span style="font-size: 14pt;">
+        1 &nbsp;&nbsp; 2 &nbsp;&nbsp; 3 &nbsp;&nbsp; 4 &nbsp;&nbsp; <strong>5</strong> &nbsp;&nbsp; 6 &nbsp;&nbsp; 7 &nbsp;&nbsp; 8 &nbsp;&nbsp; 9 &nbsp;&nbsp; 10
+        </span><br>
+        <small>(Harder) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Baseline) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Easier)</small>
+        <br><br>
+        Notes (optional): _________________________________________________
+    </div>
+</div>
+
+<!-- Summary & Scoring Page -->
+<div class="page">
+    <h1>Results Summary</h1>
+    
+    <table class="scoring-table">
+        <tr>
+            <th>Sample</th>
+            <th>Your Score (1-10)</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td><strong>A</strong></td>
+            <td class="score-box"></td>
+            <td></td>
+        </tr>
+        <tr style="background:#ffffd0;">
+            <td><strong>B (Baseline)</strong></td>
+            <td class="score-box"><strong>5</strong></td>
+            <td>OpenDyslexic standard</td>
+        </tr>
+        <tr>
+            <td><strong>C</strong></td>
+            <td class="score-box"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>D</strong></td>
+            <td class="score-box"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><strong>E</strong></td>
+            <td class="score-box"></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <div class="instructions" style="margin-top: 30px;">
+        <h2>Final Questions</h2>
+        <p><strong>1. Which sample was EASIEST to read?</strong> (Circle one)<br>
+        A &nbsp;&nbsp;&nbsp; B &nbsp;&nbsp;&nbsp; C &nbsp;&nbsp;&nbsp; D &nbsp;&nbsp;&nbsp; E</p>
+        
+        <p><strong>2. Which sample was HARDEST to read?</strong> (Circle one)<br>
+        A &nbsp;&nbsp;&nbsp; B &nbsp;&nbsp;&nbsp; C &nbsp;&nbsp;&nbsp; D &nbsp;&nbsp;&nbsp; E</p>
+        
+        <p><strong>3. Any other comments about the reading experience?</strong><br>
+        _______________________________________________________________<br>
+        _______________________________________________________________<br>
+        _______________________________________________________________</p>
+    </div>
+    
+    <p style="font-family: Arial; font-size: 12pt; margin-top: 30px;">
+        Time Completed: _____________ &nbsp;&nbsp;&nbsp; Total Time: _____________ minutes
+    </p>
+    
+    <hr style="margin-top: 40px;">
+    
+    <p style="font-family: Arial; font-size: 10pt; color: #666; text-align: center;">
+        <strong>FOR RESEARCHER USE ONLY - DO NOT SHARE WITH PARTICIPANT</strong><br>
+        Randomization Key on separate document
+    </p>
+</div>
+
+</body>
+</html>
