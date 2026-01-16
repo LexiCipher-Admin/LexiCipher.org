@@ -8,7 +8,7 @@ This folder contains projects for optimizing typography for individuals with dys
 
 | Project | Status | Description |
 |---------|--------|-------------|
-| 📁 **[dyslexia-font-org/](./dyslexia-font-org/)** | 🚀 MVP Development | Open-source web platform for personalized font optimization |
+| 📁 **[dyslexia-font-org/](./dyslexia-font-org/)** | 🟡 MVP Foundation Complete | Open-source web platform for personalized font optimization |
 | 📁 **[john-doe-font/](./john-doe-font/)** | ⏸️ Paused → Alpha Test | John Doe = "Alpha User #1" for platform |
 
 ### 🔄 Project Relationship Update (January 16, 2026)
@@ -92,7 +92,25 @@ font projects/
 │       └── variants/                   # Generated font variants
 │
 └── 📁 dyslexia-font-org/               # DyslexiaFont.org Platform Project
-    └── dyslexiafont.org-project-plan.md # Comprehensive development plan
+    ├── README.md                       # Project README with badges
+    ├── LICENSE                         # MIT License
+    ├── CONTRIBUTING.md                 # Contribution guidelines
+    ├── CODE_OF_CONDUCT.md              # Contributor Covenant
+    ├── dyslexiafont.org-project-plan.md # Comprehensive development plan
+    ├── bibliography/                   # Research references
+    ├── .github/                        # GitHub templates (issues, PRs)
+    └── app/                            # Next.js 15 Application
+        ├── package.json                # Dependencies (352 packages)
+        ├── tsconfig.json               # TypeScript config
+        ├── tailwind.config.ts          # Tailwind CSS config
+        ├── next.config.ts              # Next.js config
+        ├── app/                        # App Router pages
+        │   ├── layout.tsx              # Root layout
+        │   ├── page.tsx                # Landing page
+        │   └── globals.css             # Global styles + @font-face
+        └── lib/
+            └── passages/
+                └── passageBank.ts      # 15 reading passages (3 grade levels)
 ```
 
 ---
@@ -105,9 +123,10 @@ font projects/
 - Word processor (Word, Google Docs, etc.)
 
 ### For DyslexiaFont.org Development
-- Node.js 18+
+- Node.js 18+ (verified: v24.13.0 installed)
+- npm (verified: v11.6.2 installed)
 - Python 3.12+ (optional, for server-side font generation)
-- PostgreSQL (for production)
+- PostgreSQL (for production - not yet implemented)
 
 ---
 
