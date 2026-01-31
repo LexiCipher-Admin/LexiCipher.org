@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniEE02" format="2">
+  <advance width="656"/>
+  <unicode hex="EE02"/>
+  <outline>
+    <contour>
+      <point x="251" y="866" type="move"/>
+      <point x="251" y="598" type="line"/>
+      <point x="111" y="598" type="line"/>
+      <point x="111" y="866" type="line"/>
+    </contour>
+    <contour>
+      <point x="563" y="866" type="move"/>
+      <point x="563" y="598" type="line"/>
+      <point x="423" y="598" type="line"/>
+      <point x="423" y="866" type="line"/>
+    </contour>
+  </outline>
+</glyph>
