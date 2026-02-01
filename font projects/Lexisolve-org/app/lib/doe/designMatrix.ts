@@ -4,14 +4,14 @@
  * Generates a 16-run design for 7 factors (Resolution IV).
  * Main effects are clean; 2-factor interactions alias with other 2FIs.
  * 
- * The 7 factors are:
- * - A: Letter Spacing (0% vs +12%)
- * - B: Word Spacing (0% vs +20%)
- * - C: Line Height (1.4 vs 1.8)
- * - D: Font Weight (400 vs 600)
- * - E: Font Size (+0% vs +15%)     = ABC (generator)
- * - F: Paragraph Width (65ch vs 50ch) = ABD (generator)
- * - G: BWGT (0 vs 100)             = ACD (generator)
+ * The 7 factors are (EXTREME RANGES - updated based on alpha test feedback):
+ * - A: Letter Spacing (0% vs +25%)           - was +12%
+ * - B: Word Spacing (0% vs +40%)             - was +20%
+ * - C: Line Height (1.3 vs 2.0)              - was 1.4-1.8
+ * - D: Font Weight (300 vs 700)              - was 400-600
+ * - E: Font Size (-10% vs +25%) = ABC        - was 0-15%
+ * - F: Paragraph Width (80ch vs 40ch) = ABD  - was 65-50ch
+ * - G: BWGT (0 vs 100)             = ACD
  * 
  * Defining relation: I = ABCE = ABDF = ACDG = CDEF = BDEG = BCFG = AEFG
  */
@@ -99,15 +99,20 @@ export function factorsToCSSValues(params: FontParameters): CSSFontValues {
 
 /**
  * Gets baseline CSS values (all factors at low level)
+ * 
+ * BASELINE USES NEUTRAL SETTINGS:
+ * - Roboto font (not OpenDyslexic) for objective comparison
+ * - All spacing at 0 (no extra spacing)
+ * - Standard weight and size
  */
 export function getBaselineCSSValues(): CSSFontValues {
   return {
-    fontSize: '1em',
-    letterSpacing: '0em',
-    wordSpacing: '0em',
-    lineHeight: 1.4,
-    fontWeight: 400,
-    maxWidth: '65ch',
+    fontSize: '1em',              // No size adjustment
+    letterSpacing: '0em',         // No extra letter spacing
+    wordSpacing: '0em',           // No extra word spacing
+    lineHeight: 1.3,              // Low end of range (was 1.4)
+    fontWeight: 300,              // Light weight (was 400)
+    maxWidth: '80ch',             // Wide lines (was 65ch)
     fontVariationSettings: "'BWGT' 0",
   };
 }
@@ -236,16 +241,17 @@ export function getSignificantFactors(
 
 /**
  * Converts a design run to human-readable factor descriptions
+ * (Updated with EXTREME RANGES)
  */
 export function describeRun(params: FontParameters): string[] {
   const descriptions: string[] = [];
 
-  if (params.letterSpacing === 1) descriptions.push('Wider letter spacing (+12%)');
-  if (params.wordSpacing === 1) descriptions.push('Wider word spacing (+20%)');
-  if (params.lineHeight === 1) descriptions.push('Increased line height (1.8)');
-  if (params.fontWeight === 1) descriptions.push('Heavier weight (600)');
-  if (params.fontSize === 1) descriptions.push('Larger text (+15%)');
-  if (params.paragraphWidth === 1) descriptions.push('Narrower lines (50ch)');
+  if (params.letterSpacing === 1) descriptions.push('Wider letter spacing (+25%)');
+  if (params.wordSpacing === 1) descriptions.push('Wider word spacing (+40%)');
+  if (params.lineHeight === 1) descriptions.push('Increased line height (2.0)');
+  if (params.fontWeight === 1) descriptions.push('Heavier weight (700)');
+  if (params.fontSize === 1) descriptions.push('Larger text (+25%)');
+  if (params.paragraphWidth === 1) descriptions.push('Narrower lines (40ch)');
   if (params.bwgt === 1) descriptions.push('Heavy bottom weight (BWGT 100)');
 
   if (descriptions.length === 0) descriptions.push('Baseline settings');

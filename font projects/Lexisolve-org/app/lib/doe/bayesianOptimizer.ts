@@ -10,13 +10,14 @@
 import { FontParameters } from '../types/session';
 
 // Type for continuous parameter values (0 to 1 normalized scale)
+// EXTREME RANGES (updated based on alpha test feedback):
 export interface NormalizedParams {
-  letterSpacing: number;  // 0 = 0%, 1 = 12%
-  wordSpacing: number;    // 0 = 0%, 1 = 20%
-  lineHeight: number;     // 0 = 1.4, 1 = 1.8
-  fontWeight: number;     // 0 = 400, 1 = 600
-  fontSize: number;       // 0 = 0%, 1 = 15%
-  paragraphWidth: number; // 0 = 65ch, 1 = 50ch
+  letterSpacing: number;  // 0 = 0%, 1 = 25% (was 12%)
+  wordSpacing: number;    // 0 = 0%, 1 = 40% (was 20%)
+  lineHeight: number;     // 0 = 1.3, 1 = 2.0 (was 1.4-1.8)
+  fontWeight: number;     // 0 = 300, 1 = 700 (was 400-600)
+  fontSize: number;       // 0 = -10%, 1 = 25% (was 0-15%)
+  paragraphWidth: number; // 0 = 80ch, 1 = 40ch (was 65-50ch)
   bwgt: number;           // 0 = 0, 1 = 100 (BWGT axis)
 }
 
@@ -386,6 +387,14 @@ function featuresToParams(
 
 /**
  * Convert normalized params (0-1) to actual CSS values
+ * 
+ * EXTREME RANGES (updated based on alpha test feedback):
+ * - Letter spacing: 0% → +25%
+ * - Word spacing: 0% → +40%
+ * - Line height: 1.3 → 2.0
+ * - Font weight: 300 → 700
+ * - Font size: -10% → +25% (0.9em → 1.25em)
+ * - Line width: 80ch → 40ch
  */
 export function normalizedToCSS(params: NormalizedParams): {
   fontSize: string;
@@ -399,29 +408,36 @@ export function normalizedToCSS(params: NormalizedParams): {
   // BWGT: 0-1 maps to 0-100
   const bwgtValue = Math.round(params.bwgt * 100);
 
+  // Font size: 0 = 0.9em (-10%), 1 = 1.25em (+25%)
+  const fontSizeValue = 0.9 + params.fontSize * 0.35;
+
   return {
-    fontSize: `${1 + params.fontSize * 0.15}em`,
-    letterSpacing: `${params.letterSpacing * 0.12}em`,
-    wordSpacing: `${params.wordSpacing * 0.2}em`,
-    lineHeight: 1.4 + params.lineHeight * 0.4,
-    fontWeight: 400 + Math.round(params.fontWeight * 200),
-    maxWidth: `${65 - params.paragraphWidth * 15}ch`,
+    fontSize: `${fontSizeValue.toFixed(2)}em`,                         // -10% to +25%
+    letterSpacing: `${(params.letterSpacing * 0.25).toFixed(3)}em`,    // 0-25%
+    wordSpacing: `${(params.wordSpacing * 0.4).toFixed(2)}em`,         // 0-40%
+    lineHeight: 1.3 + params.lineHeight * 0.7,                         // 1.3-2.0
+    fontWeight: 300 + Math.round(params.fontWeight * 400),             // 300-700
+    maxWidth: `${80 - params.paragraphWidth * 40}ch`,                  // 80ch-40ch
     fontVariationSettings: `'BWGT' ${bwgtValue}`,
   };
 }
 
 /**
  * Convert normalized params to human-readable descriptions
+ * Uses EXTREME RANGES
  */
 export function describeNormalizedParams(params: NormalizedParams): Record<string, string> {
   const css = normalizedToCSS(params);
 
+  // Font size: 0 = -10%, 1 = +25%
+  const fontSizePercent = -10 + params.fontSize * 35;
+
   return {
-    letterSpacing: `${(params.letterSpacing * 12).toFixed(1)}%`,
-    wordSpacing: `${(params.wordSpacing * 20).toFixed(1)}%`,
+    letterSpacing: `${(params.letterSpacing * 25).toFixed(1)}%`,       // 0-25%
+    wordSpacing: `${(params.wordSpacing * 40).toFixed(1)}%`,           // 0-40%
     lineHeight: css.lineHeight.toFixed(2),
     fontWeight: css.fontWeight.toString(),
-    fontSize: `+${(params.fontSize * 15).toFixed(1)}%`,
+    fontSize: `${fontSizePercent >= 0 ? '+' : ''}${fontSizePercent.toFixed(1)}%`,
     paragraphWidth: css.maxWidth,
     bwgt: `${Math.round(params.bwgt * 100)}`,
   };
