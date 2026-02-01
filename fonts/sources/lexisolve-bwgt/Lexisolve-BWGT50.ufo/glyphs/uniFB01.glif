@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniFB01" format="2">
+  <advance width="1135"/>
+  <unicode hex="FB01"/>
+  <outline>
+    <contour>
+      <point x="388" y="0" type="move"/>
+      <point x="203" y="0" type="line"/>
+      <point x="203" y="1024" type="line"/>
+      <point x="203" y="1124"/>
+      <point x="299" y="1259"/>
+      <point x="477" y="1328"/>
+      <point x="599" y="1328" type="qcurve"/>
+      <point x="671" y="1328"/>
+      <point x="809" y="1301"/>
+      <point x="882" y="1281" type="qcurve"/>
+      <point x="851" y="1157" type="line"/>
+      <point x="805" y="1171"/>
+      <point x="684" y="1197"/>
+      <point x="612" y="1197" type="qcurve"/>
+      <point x="493" y="1197"/>
+      <point x="388" y="1112"/>
+      <point x="388" y="1024" type="qcurve"/>
+    </contour>
+    <contour>
+      <point x="609" y="974" type="move"/>
+      <point x="609" y="868" type="line"/>
+      <point x="32" y="868" type="line"/>
+      <point x="32" y="974" type="line"/>
+    </contour>
+    <contour>
+      <point x="973" y="974" type="move"/>
+      <point x="973" y="0" type="line"/>
+      <point x="788" y="0" type="line"/>
+      <point x="788" y="974" type="line"/>
+    </contour>
+  </outline>
+</glyph>

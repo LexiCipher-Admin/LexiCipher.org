@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni207C" format="2">
+  <advance width="760"/>
+  <unicode hex="207C"/>
+  <outline>
+    <contour>
+      <point x="680" y="952" type="move"/>
+      <point x="680" y="822" type="line"/>
+      <point x="80" y="822" type="line"/>
+      <point x="80" y="952" type="line"/>
+    </contour>
+    <contour>
+      <point x="680" y="1189" type="move"/>
+      <point x="680" y="1059" type="line"/>
+      <point x="80" y="1059" type="line"/>
+      <point x="80" y="1189" type="line"/>
+    </contour>
+  </outline>
+</glyph>

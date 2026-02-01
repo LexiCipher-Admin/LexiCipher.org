@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name=".notdef" format="2">
+  <advance width="908"/>
+
+  <outline>
+    <contour>
+      <point x="777" y="1042" type="move"/>
+      <point x="777" y="1010" type="line"/>
+      <point x="127" y="1010" type="line"/>
+      <point x="127" y="1042" type="line"/>
+    </contour>
+    <contour>
+      <point x="154" y="1042" type="move"/>
+      <point x="154" y="0" type="line"/>
+      <point x="100" y="0" type="line"/>
+      <point x="100" y="1042" type="line"/>
+    </contour>
+    <contour>
+      <point x="808" y="1042" type="move"/>
+      <point x="808" y="0" type="line"/>
+      <point x="754" y="0" type="line"/>
+      <point x="754" y="1042" type="line"/>
+    </contour>
+    <contour>
+      <point x="777" y="61" type="move"/>
+      <point x="777" y="0" type="line"/>
+      <point x="127" y="0" type="line"/>
+      <point x="127" y="61" type="line"/>
+    </contour>
+    <contour>
+      <point x="777" y="1025" type="move"/>
+      <point x="184" y="34" type="line"/>
+      <point x="126" y="34" type="line"/>
+      <point x="719" y="1025" type="line"/>
+    </contour>
+    <contour>
+      <point x="719" y="34" type="move"/>
+      <point x="126" y="1025" type="line"/>
+      <point x="184" y="1025" type="line"/>
+      <point x="777" y="34" type="line"/>
+    </contour>
+  </outline>
+</glyph>
