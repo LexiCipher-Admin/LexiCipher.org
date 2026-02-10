@@ -19,6 +19,7 @@ import { generateDesignMatrix, calculateStandardError, getSignificantFactors, ge
 import { calculateFullDOEAnalysis } from '@/lib/doe/effectsAnalysis';
 import { getPassagesByLevel, getPassageById, getPassageLevelForGrade, Passage } from '@/lib/passages/passageBank';
 import { doeResultsToFontSettings, downloadCSS, generateCustomFont, downloadBlob } from '@/lib/fonts/fontGenerator';
+import { saveReadingSettings, normalizedToReadingSettings } from '@/lib/hooks/useReadingSettings';
 
 import SetupScreen from './components/SetupScreen';
 import CalibrationScreen from './components/CalibrationScreen';
@@ -437,8 +438,40 @@ export default function TestPage() {
         {phase === 'optimization' && session?.doeResults && session.setup && (
           <OptimizationScreen
             session={session}
-            onUpdate={setSession}
-            onComplete={() => setPhase('results')}
+            onUpdate={(updatedSession) => {
+              setSession(updatedSession);
+              // Save reading settings when optimization completes
+              if (updatedSession.optimizationResult?.optimalValues) {
+                const optimalValues = updatedSession.optimizationResult.optimalValues;
+                const readingSettings = normalizedToReadingSettings(optimalValues);
+                saveReadingSettings({
+                  ...readingSettings,
+                  source: 'test',
+                });
+              }
+            }}
+            onComplete={() => {
+              // Also save settings if skipped optimization (use DOE results)
+              if (session.doeResults && !session.optimizationResult) {
+                const effects = session.doeResults.effects;
+                // Convert DOE effects to approximate normalized values
+                // Effects are typically -1 to +1, map to 0-1
+                const readingSettings = normalizedToReadingSettings({
+                  letterSpacing: (effects.letterSpacing + 1) / 2,
+                  wordSpacing: (effects.wordSpacing + 1) / 2,
+                  lineHeight: (effects.lineHeight + 1) / 2,
+                  fontWeight: (effects.fontWeight + 1) / 2,
+                  fontSize: (effects.fontSize + 1) / 2,
+                  paragraphWidth: (effects.paragraphWidth + 1) / 2,
+                  bwgt: (effects.bwgt + 1) / 2,
+                });
+                saveReadingSettings({
+                  ...readingSettings,
+                  source: 'test',
+                });
+              }
+              setPhase('results');
+            }}
             passages={getPassagesByLevel(getPassageLevelForGrade(session.setup.readingLevel))}
           />
         )}

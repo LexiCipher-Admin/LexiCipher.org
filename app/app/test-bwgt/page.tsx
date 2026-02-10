@@ -3,7 +3,7 @@
 /**
  * BWGT Font Test Page
  * 
- * Interactive testing page for the Lexisolve BWGT variable font.
+ * Interactive testing page for the LexiCipher BWGT variable font.
  * Allows real-time adjustment of BWGT axis and other typography settings.
  */
 
@@ -34,7 +34,7 @@ export default function TestBWGTPage() {
                     BWGT Font Test Page
                 </h1>
                 <p className="text-gray-600 mb-8">
-                    Test the Lexisolve BWGT (Bottom Weight) variable font with interactive controls.
+                    Test the LexiCipher BWGT (Bottom Weight) variable font with interactive controls.
                 </p>
 
                 {/* Controls Panel */}
@@ -283,7 +283,7 @@ export default function TestBWGTPage() {
                     </h2>
                     <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
                         {`.reading-passage {
-  font-family: "Lexisolve BWGT", Arial, sans-serif;
+  font-family: "LexiCipher BWGT", Arial, sans-serif;
   font-variation-settings: 'BWGT' ${bwgtValue};
   font-size: ${fontSize}em;
   font-weight: ${fontWeight};

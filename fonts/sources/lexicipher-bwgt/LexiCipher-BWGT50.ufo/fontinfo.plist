@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>familyName</key>
+    <string>LexiCipher</string>
+    <key>styleName</key>
+    <string>BWGT50</string>
+    <key>unitsPerEm</key>
+    <integer>2048</integer>
+    <key>ascender</key>
+    <integer>1536</integer>
+    <key>descender</key>
+    <integer>-512</integer>
+    <key>xHeight</key>
+    <integer>1082</integer>
+    <key>capHeight</key>
+    <integer>1456</integer>
+</dict>
+</plist>

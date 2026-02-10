@@ -53,7 +53,7 @@ export function useBWGT(initialValue: number = 0): UseBWGTReturn {
 
     // Memoize styles to prevent unnecessary re-renders
     const styles = useMemo<BWGTStyles>(() => ({
-        fontFamily: '"Lexisolve BWGT", Arial, sans-serif',
+        fontFamily: '"LexiCipher BWGT", Arial, sans-serif',
         fontVariationSettings: `'BWGT' ${bwgtValue}`,
     }), [bwgtValue]);
 
@@ -79,7 +79,7 @@ export function useBWGT(initialValue: number = 0): UseBWGTReturn {
 export function getBWGTStyles(bwgtValue: number): BWGTStyles {
     const clampedValue = Math.max(0, Math.min(100, bwgtValue));
     return {
-        fontFamily: '"Lexisolve BWGT", Arial, sans-serif',
+        fontFamily: '"LexiCipher BWGT", Arial, sans-serif',
         fontVariationSettings: `'BWGT' ${clampedValue}`,
     };
 }

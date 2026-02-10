@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Research | Lexisolve',
-    description: 'The scientific research behind Lexisolve typography optimization for dyslexia.',
+    title: 'Research | LexiCipher',
+    description: 'The scientific research behind LexiCipher typography optimization for dyslexia.',
 };
 
 interface Citation {
@@ -79,7 +79,7 @@ export default function ResearchPage() {
                 {/* Header */}
                 <div className="text-center space-y-4 mb-12">
                     <h1 className="text-4xl font-bold text-dark-blue">
-                        The Science Behind Lexisolve
+                        The Science Behind LexiCipher
                     </h1>
                     <p className="text-xl text-gray-600">
                         Our approach is built on peer-reviewed research in typography, visual perception, and reading science.
@@ -117,7 +117,7 @@ export default function ResearchPage() {
                     </h2>
                     <div className="space-y-4 text-gray-700">
                         <p>
-                            Lexisolve uses <strong>Design of Experiments (DOE)</strong>, a statistical methodology
+                            LexiCipher uses <strong>Design of Experiments (DOE)</strong>, a statistical methodology
                             developed for industrial quality improvement, to efficiently identify which typography
                             factors affect your reading comfort.
                         </p>

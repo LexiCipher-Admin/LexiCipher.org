@@ -1,10 +1,10 @@
 # LexiPage Chrome Extension
 
-Apply your personalized reading settings from lexisolve.org to any website.
+Apply your personalized reading settings from lexicipher.org to any website.
 
 ## Features
 
-- **Import Settings**: Import your optimized settings JSON from lexisolve.org
+- **Import Settings**: Import your optimized settings JSON from lexicipher.org
 - **Global Toggle**: Enable/disable the extension across all sites
 - **Per-Site Control**: Disable specific sites while keeping others enhanced
 - **Real-Time Adjustments**: Fine-tune settings via sliders in the popup
@@ -26,7 +26,7 @@ Apply your personalized reading settings from lexisolve.org to any website.
 3. **Test**:
    - Navigate to any text-heavy website (e.g., Wikipedia, news sites)
    - Click the LexiPage icon in the toolbar
-   - Adjust settings or import your lexisolve.org JSON
+   - Adjust settings or import your lexicipher.org JSON
 
 ## File Structure
 
@@ -42,7 +42,7 @@ extension/
 │   ├── popup.css          # Popup styling
 │   └── popup.js           # Popup logic
 ├── fonts/
-│   └── Lexisolve-BWGT-VF.ttf  # Variable font
+│   └── LexiCipher-BWGT-VF.ttf  # Variable font
 ├── icons/
 │   └── (PNG icons needed)
 └── README.md              # This file
@@ -53,7 +53,7 @@ extension/
 1. **Content Script**: Injected into every page, adds CSS rules to enhance readability
 2. **Popup**: Provides UI for adjusting and importing settings
 3. **Storage**: Uses `chrome.storage.sync` to persist settings across devices
-4. **Font**: Bundles the Lexisolve variable font for consistent typography
+4. **Font**: Bundles the LexiCipher variable font for consistent typography
 
 ## Settings
 
@@ -66,11 +66,11 @@ extension/
 | Max Width      | Maximum paragraph width   | 40-100ch |
 | BWGT           | Bold Weight variable axis | 0-100    |
 
-## Importing Settings from lexisolve.org
+## Importing Settings from lexicipher.org
 
-1. Complete the reading assessment at lexisolve.org
+1. Complete the reading assessment at lexicipher.org
 2. On the results page, click "Export as JSON"
-3. In the extension popup, click "Import from lexisolve.org"
+3. In the extension popup, click "Import from lexicipher.org"
 4. Select your downloaded JSON file
 5. Settings are applied immediately
 
@@ -90,4 +90,4 @@ extension/
 
 ## License
 
-MIT License - Part of the Lexisolve.org project
+MIT License - Part of the LexiCipher.org project

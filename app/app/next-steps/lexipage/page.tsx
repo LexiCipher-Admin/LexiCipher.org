@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'LexiPage Chrome Extension | Lexisolve',
+    title: 'LexiPage Chrome Extension | LexiCipher',
     description: 'Apply your reading settings to any website with LexiPage.',
 };
 

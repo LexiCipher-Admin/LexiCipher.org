@@ -1,7 +1,7 @@
 /**
  * Font Generator Utility
  * 
- * Generates personalized font settings and provides the Lexisolve BWGT variable font
+ * Generates personalized font settings and provides the LexiCipher BWGT variable font
  * for download along with CSS settings.
  * 
  * Note: Some settings like letter-spacing and line-height cannot be baked into
@@ -84,12 +84,12 @@ export function doeResultsToFontSettings(
  * Generate CSS styles from font settings
  */
 export function settingsToCSS(settings: FontSettings): string {
-  return `/* Lexisolve.org - Personalized Typography Settings */
+  return `/* LexiCipher.org - Personalized Typography Settings */
 /* Generated: ${new Date().toISOString()} */
 
 .dyslexia-optimized {
   /* Font */
-  font-family: 'Lexisolve', 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+  font-family: 'LexiCipher', 'OpenDyslexic', 'Comic Sans MS', sans-serif;
   font-weight: ${settings.fontWeight};
   font-variation-settings: 'BWGT' ${settings.bwgt};
   
@@ -109,7 +109,7 @@ export function settingsToCSS(settings: FontSettings): string {
 
 /* Apply to all body text */
 body.dyslexia-mode {
-  font-family: 'Lexisolve', 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+  font-family: 'LexiCipher', 'OpenDyslexic', 'Comic Sans MS', sans-serif;
   font-variation-settings: 'BWGT' ${settings.bwgt};
   letter-spacing: ${(settings.letterSpacing / 100).toFixed(2)}em;
   word-spacing: ${(settings.wordSpacing / 100).toFixed(2)}em;
@@ -127,12 +127,12 @@ body.dyslexia-mode .content {
 /**
  * Generate a downloadable font file
  * 
- * Returns the Lexisolve BWGT variable font.
+ * Returns the LexiCipher BWGT variable font.
  * The BWGT axis can be adjusted via CSS font-variation-settings.
  */
 export async function generateCustomFont(settings: FontSettings): Promise<Blob> {
   try {
-    const response = await fetch('/fonts/Lexisolve-BWGT-VF.ttf');
+    const response = await fetch('/fonts/LexiCipher-BWGT-VF.ttf');
     if (!response.ok) {
       throw new Error('Font file not found');
     }
@@ -163,7 +163,7 @@ export function downloadBlob(blob: Blob, filename: string): void {
 export function downloadCSS(settings: FontSettings): void {
   const css = settingsToCSS(settings);
   const blob = new Blob([css], { type: 'text/css' });
-  downloadBlob(blob, 'lexisolve-settings.css');
+  downloadBlob(blob, 'lexicipher-settings.css');
 }
 
 /**
@@ -173,7 +173,7 @@ export function downloadSettingsJSON(settings: FontSettings, optimizationResult?
   const data = {
     version: '1.0',
     generated: new Date().toISOString(),
-    source: 'lexisolve.org',
+    source: 'lexicipher.org',
     settings: {
       letterSpacing: `${settings.letterSpacing}%`,
       wordSpacing: `${settings.wordSpacing}%`,
@@ -197,7 +197,7 @@ export function downloadSettingsJSON(settings: FontSettings, optimizationResult?
 
   const json = JSON.stringify(data, null, 2);
   const blob = new Blob([json], { type: 'application/json' });
-  downloadBlob(blob, 'lexisolve-settings.json');
+  downloadBlob(blob, 'lexicipher-settings.json');
 }
 
 /**
@@ -213,7 +213,7 @@ export async function downloadFullPackage(
   // Try to download the font
   try {
     const fontBlob = await generateCustomFont(settings);
-    downloadBlob(fontBlob, 'lexisolve.ttf');
+    downloadBlob(fontBlob, 'lexicipher.ttf');
   } catch (error) {
     console.warn('Font download failed, CSS still provided:', error);
   }

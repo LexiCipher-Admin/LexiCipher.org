@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'For Developers | Lexisolve',
-    description: 'Integrate Lexisolve typography settings into your website or application.',
+    title: 'For Developers | LexiCipher',
+    description: 'Integrate LexiCipher typography settings into your website or application.',
 };
 
 export default function DevelopersPage() {
@@ -21,7 +21,7 @@ export default function DevelopersPage() {
                     </div>
                     <h1 className="text-4xl font-bold text-dark-blue">For Developers</h1>
                     <p className="text-xl text-gray-600">
-                        Integrate Lexisolve into your website or application
+                        Integrate LexiCipher into your website or application
                     </p>
                 </div>
 
@@ -29,19 +29,19 @@ export default function DevelopersPage() {
                 <section className="bg-white rounded-xl shadow-sm p-8 mb-8">
                     <h2 className="text-2xl font-semibold text-dark-blue mb-6">Quick Start</h2>
                     <p className="text-gray-600 mb-4">
-                        Add the Lexisolve font and apply user-optimized settings via CSS:
+                        Add the LexiCipher font and apply user-optimized settings via CSS:
                     </p>
                     <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
                         <pre className="text-green-400 text-sm font-mono whitespace-pre-wrap">{`/* 1. Load the font */
 @font-face {
-  font-family: 'Lexisolve';
-  src: url('/fonts/Lexisolve-Variable.ttf') format('truetype');
+  font-family: 'LexiCipher';
+  src: url('/fonts/LexiCipher-Variable.ttf') format('truetype');
   font-weight: 100 900;
 }
 
 /* 2. Apply user settings (from JSON export) */
 .readable-text {
-  font-family: 'Lexisolve', sans-serif;
+  font-family: 'LexiCipher', sans-serif;
   font-size: 18px;
   letter-spacing: 0.05em;
   word-spacing: 0.1em;
@@ -82,7 +82,7 @@ export default function DevelopersPage() {
                 <section className="bg-white rounded-xl shadow-sm p-8 mb-8">
                     <h2 className="text-2xl font-semibold text-dark-blue mb-6">Variable Font Axes</h2>
                     <p className="text-gray-600 mb-4">
-                        Lexisolve is a variable font with these axes:
+                        LexiCipher is a variable font with these axes:
                     </p>
                     <table className="w-full text-left">
                         <thead>
@@ -147,10 +147,10 @@ export default function DevelopersPage() {
                 <div className="bg-orange-50 border-2 border-orange-200 rounded-xl p-8 text-center">
                     <h2 className="text-2xl font-semibold text-dark-blue mb-4">Open Source</h2>
                     <p className="text-gray-600 mb-6">
-                        Lexisolve is open source. View the code, report issues, or contribute on GitHub.
+                        LexiCipher is open source. View the code, report issues, or contribute on GitHub.
                     </p>
                     <a
-                        href="https://github.com/lexisolve/lexisolve-org"
+                        href="https://github.com/lexicipher/lexicipher-org"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors"

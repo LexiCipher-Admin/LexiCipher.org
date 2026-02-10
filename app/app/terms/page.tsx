@@ -7,7 +7,7 @@ export default function TermsOfService() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">1. Acceptance of Terms</h2>
         <p>
-          By accessing or using Lexisolve.org (&quot;the platform&quot;, &quot;the service&quot;, &quot;we&quot;, or &quot;our&quot;),
+          By accessing or using LexiCipher.org (&quot;the platform&quot;, &quot;the service&quot;, &quot;we&quot;, or &quot;our&quot;),
           you agree to be bound by these Terms of Service. If you do not agree to these terms,
           please do not use the platform.
         </p>
@@ -16,7 +16,7 @@ export default function TermsOfService() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">2. Service Description</h2>
         <p className="mb-4">
-          Lexisolve.org is an experimental typography optimization platform that helps users
+          LexiCipher.org is an experimental typography optimization platform that helps users
           discover personalized font and reading settings through guided testing. The platform:
         </p>
         <ul className="list-disc pl-6 mb-4">
@@ -28,7 +28,7 @@ export default function TermsOfService() {
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
           <p className="font-semibold">⚠️ Important Disclaimer</p>
           <p>
-            Lexisolve.org is <strong>NOT a diagnostic tool</strong> for dyslexia or any reading disorder.
+            LexiCipher.org is <strong>NOT a diagnostic tool</strong> for dyslexia or any reading disorder.
             Only qualified professionals (psychologists, educational specialists, or medical doctors)
             can diagnose dyslexia. This tool helps you discover typographic preferences that may
             improve your reading comfort. It does not assess, diagnose, or treat dyslexia.
@@ -89,7 +89,7 @@ export default function TermsOfService() {
         <h2 className="text-xl font-semibold mb-4">7. Intellectual Property</h2>
         <h3 className="text-lg font-medium mb-2">Platform Content</h3>
         <p className="mb-4">
-          The Lexisolve.org platform, including its design, code, and documentation,
+          The LexiCipher.org platform, including its design, code, and documentation,
           is open source and available under the terms specified in our GitHub repository.
         </p>
 
@@ -118,7 +118,7 @@ export default function TermsOfService() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">8. Disclaimer of Warranties</h2>
         <p className="mb-4">
-          Lexisolve.org is provided <strong>&quot;AS IS&quot;</strong> and <strong>&quot;AS AVAILABLE&quot;</strong>
+          LexiCipher.org is provided <strong>&quot;AS IS&quot;</strong> and <strong>&quot;AS AVAILABLE&quot;</strong>
           without warranty of any kind, express or implied, including but not limited to:
         </p>
         <ul className="list-disc pl-6">
@@ -133,7 +133,7 @@ export default function TermsOfService() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">9. Limitation of Liability</h2>
         <p>
-          To the maximum extent permitted by law, Lexisolve.org and its creators,
+          To the maximum extent permitted by law, LexiCipher.org and its creators,
           contributors, and maintainers shall not be liable for any indirect, incidental,
           special, consequential, or punitive damages, or any loss of profits or revenues,
           whether incurred directly or indirectly, or any loss of data, use, goodwill,
@@ -150,7 +150,7 @@ export default function TermsOfService() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">10. Privacy</h2>
         <p>
-          Your use of Lexisolve.org is also governed by our{" "}
+          Your use of LexiCipher.org is also governed by our{" "}
           <a href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</a>,
           which is incorporated into these Terms of Service by reference.
         </p>

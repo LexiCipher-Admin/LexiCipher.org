@@ -208,9 +208,9 @@ async function handleImport(event) {
         const text = await file.text();
         const data = JSON.parse(text);
 
-        // Validate it's from lexisolve.org
-        if (data.generator !== 'lexisolve.org') {
-            alert('This file does not appear to be from lexisolve.org');
+        // Validate it's from lexicipher.org
+        if (data.generator !== 'lexicipher.org') {
+            alert('This file does not appear to be from lexicipher.org');
             return;
         }
 

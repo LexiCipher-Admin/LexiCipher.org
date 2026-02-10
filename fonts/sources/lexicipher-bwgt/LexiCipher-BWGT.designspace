@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="5.0">
+  <!-- 
+    LexiCipher BWGT Variable Font Designspace
+    
+    BWGT (Bottom Weight) Axis:
+    - Custom axis for dyslexia research
+    - Range: 0 to 100
+    - 0 = Uniform stroke weight (standard)
+    - 100 = Maximum bottom-heavy distribution
+  -->
+  
+  <axes>
+    <axis tag="BWGT" name="Bottom Weight" minimum="0" default="0" maximum="100">
+      <labelname xml:lang="en">Bottom Weight</labelname>
+    </axis>
+  </axes>
+  
+  <sources>
+    <!-- BWGT 0: Baseline (uniform stroke weight) -->
+    <source filename="LexiCipher-BWGT0.ufo" familyname="LexiCipher" stylename="Regular">
+      <location>
+        <dimension name="Bottom Weight" xvalue="0"/>
+      </location>
+    </source>
+    
+    <!-- BWGT 50: Moderate bottom weight -->
+    <source filename="LexiCipher-BWGT50.ufo" familyname="LexiCipher" stylename="BWGT50">
+      <location>
+        <dimension name="Bottom Weight" xvalue="50"/>
+      </location>
+    </source>
+    
+    <!-- BWGT 100: Maximum bottom weight -->
+    <source filename="LexiCipher-BWGT100.ufo" familyname="LexiCipher" stylename="BWGT100">
+      <location>
+        <dimension name="Bottom Weight" xvalue="100"/>
+      </location>
+    </source>
+  </sources>
+  
+  <instances>
+    <!-- Pre-defined instances for testing -->
+    <instance name="LexiCipher Regular" familyname="LexiCipher" stylename="Regular" filename="instances/LexiCipher-Regular.ufo">
+      <location>
+        <dimension name="Bottom Weight" xvalue="0"/>
+      </location>
+    </instance>
+    
+    <instance name="LexiCipher Light Bottom" familyname="LexiCipher" stylename="LightBottom" filename="instances/LexiCipher-LightBottom.ufo">
+      <location>
+        <dimension name="Bottom Weight" xvalue="25"/>
+      </location>
+    </instance>
+    
+    <instance name="LexiCipher Medium Bottom" familyname="LexiCipher" stylename="MediumBottom" filename="instances/LexiCipher-MediumBottom.ufo">
+      <location>
+        <dimension name="Bottom Weight" xvalue="50"/>
+      </location>
+    </instance>
+    
+    <instance name="LexiCipher Heavy Bottom" familyname="LexiCipher" stylename="HeavyBottom" filename="instances/LexiCipher-HeavyBottom.ufo">
+      <location>
+        <dimension name="Bottom Weight" xvalue="75"/>
+      </location>
+    </instance>
+    
+    <instance name="LexiCipher Max Bottom" familyname="LexiCipher" stylename="MaxBottom" filename="instances/LexiCipher-MaxBottom.ufo">
+      <location>
+        <dimension name="Bottom Weight" xvalue="100"/>
+      </location>
+    </instance>
+  </instances>
+  
+</designspace>

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Getting Started | Lexisolve',
-    description: 'Learn how Lexisolve can help you find your optimal reading settings for dyslexia.',
+    title: 'Getting Started | LexiCipher',
+    description: 'Learn how LexiCipher can help you find your optimal reading settings for dyslexia.',
 };
 
 export default function GettingStartedPage() {
@@ -12,20 +12,20 @@ export default function GettingStartedPage() {
                 {/* Hero */}
                 <div className="text-center space-y-6 mb-12">
                     <h1 className="text-4xl font-bold text-dark-blue">
-                        Welcome to Lexisolve
+                        Welcome to LexiCipher
                     </h1>
                     <p className="text-xl text-gray-600">
                         Discover the typography settings that work best for your brain.
                     </p>
                 </div>
 
-                {/* What is Lexisolve */}
+                {/* What is LexiCipher */}
                 <section className="bg-white rounded-xl p-8 shadow-sm mb-8">
                     <h2 className="text-2xl font-semibold text-dark-blue mb-4">
-                        📖 What is Lexisolve?
+                        📖 What is LexiCipher?
                     </h2>
                     <p className="text-gray-700 mb-4">
-                        Lexisolve is a free, science-based tool that helps you find your optimal reading settings.
+                        LexiCipher is a free, science-based tool that helps you find your optimal reading settings.
                         Instead of guessing which font or spacing works best, our test uses Design of Experiments
                         (DOE) methodology to systematically identify what actually helps <em>you</em> read more comfortably.
                     </p>

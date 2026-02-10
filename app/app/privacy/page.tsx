@@ -9,13 +9,13 @@ export default function PrivacyPolicy() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Overview</h2>
         <p className="mb-4">
-          Lexisolve.org (&quot;we&quot;, &quot;our&quot;, or &quot;the platform&quot;) is committed to protecting your privacy.
+          LexiCipher.org (&quot;we&quot;, &quot;our&quot;, or &quot;the platform&quot;) is committed to protecting your privacy.
           This policy explains what information we collect, how we use it, and your rights regarding your data.
         </p>
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
           <p className="font-semibold">Important Notice</p>
           <p>
-            Lexisolve.org is <strong>NOT a HIPAA-covered entity</strong>. We do not provide medical services,
+            LexiCipher.org is <strong>NOT a HIPAA-covered entity</strong>. We do not provide medical services,
             store medical records, or accept health insurance. However, we voluntarily apply privacy-by-design
             principles to protect your data.
           </p>

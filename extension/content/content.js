@@ -112,10 +112,10 @@
 
     function addFontFace() {
         try {
-            const fontUrl = chrome.runtime.getURL('fonts/Lexisolve-BWGT-VF.ttf');
+            const fontUrl = chrome.runtime.getURL('fonts/LexiCipher-BWGT-VF.ttf');
             const fontFaceCSS = `
         @font-face {
-          font-family: 'Lexisolve';
+          font-family: 'LexiCipher';
           src: url('${fontUrl}') format('truetype-variations');
           font-weight: 100 900;
           font-style: normal;
@@ -164,7 +164,7 @@
       
       /* Apply to main text content */
       ${textSelectors} {
-        font-family: 'Lexisolve', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-family: 'LexiCipher', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
         letter-spacing: ${s.letterSpacing}em !important;
         word-spacing: ${s.wordSpacing}em !important;
         line-height: ${s.lineHeight} !important;
@@ -179,7 +179,7 @@
       
       /* Apply font to headings but preserve their weight */
       ${headingSelectors} {
-        font-family: 'Lexisolve', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-family: 'LexiCipher', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
         letter-spacing: ${Math.max(0, s.letterSpacing - 0.02)}em !important;
         font-variation-settings: 'BWGT' ${s.bwgt} !important;
       }
@@ -188,7 +188,7 @@
       .mw-parser-output p,
       .mw-parser-output li,
       #mw-content-text p {
-        font-family: 'Lexisolve', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-family: 'LexiCipher', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
         letter-spacing: ${s.letterSpacing}em !important;
         word-spacing: ${s.wordSpacing}em !important;
         line-height: ${s.lineHeight} !important;
@@ -201,7 +201,7 @@
       .article__body p,
       .article-content p,
       .c-article-body p {
-        font-family: 'Lexisolve', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-family: 'LexiCipher', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
         letter-spacing: ${s.letterSpacing}em !important;
         word-spacing: ${s.wordSpacing}em !important;
         line-height: ${s.lineHeight} !important;
@@ -214,7 +214,7 @@
       .paragraph,
       .post-content p,
       .body-markup p {
-        font-family: 'Lexisolve', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-family: 'LexiCipher', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
         letter-spacing: ${s.letterSpacing}em !important;
         word-spacing: ${s.wordSpacing}em !important;
         line-height: ${s.lineHeight} !important;

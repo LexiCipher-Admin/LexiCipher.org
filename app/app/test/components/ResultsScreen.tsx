@@ -285,7 +285,7 @@ export default function ResultsScreen({
 
         const cssCode = `/* Your personalized reading settings */
 .dyslexia-optimized {
-  font-family: 'Lexisolve', sans-serif;
+  font-family: 'LexiCipher', sans-serif;
   letter-spacing: ${css.letterSpacing};
   word-spacing: ${css.wordSpacing};
   line-height: ${css.lineHeight};
@@ -296,7 +296,7 @@ export default function ResultsScreen({
 
         const jsonSettings = {
           version: 1,
-          generator: "lexisolve.org",
+          generator: "lexicipher.org",
           timestamp: new Date().toISOString(),
           settings: {
             letterSpacing: css.letterSpacing,
@@ -314,7 +314,7 @@ export default function ResultsScreen({
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
-          a.download = 'lexisolve-settings.json';
+          a.download = 'lexicipher-settings.json';
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);

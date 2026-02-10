@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-    appId: 'org.lexisolve.app',
-    appName: 'Lexisolve',
+    appId: 'org.lexicipher.app',
+    appName: 'LexiCipher',
     webDir: 'out',
     server: {
         androidScheme: 'https'

@@ -1,4 +1,4 @@
-# Lexisolve.org
+# LexiCipher.org
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
@@ -7,7 +7,7 @@
 
 **Personalized Font Optimization Platform for Dyslexia**
 
-Lexisolve.org helps individuals with dyslexia discover their optimal reading configuration through guided Design of Experiments (DOE) testing. Get a custom font file personalized for your unique visual processing.
+LexiCipher.org helps individuals with dyslexia discover their optimal reading configuration through guided Design of Experiments (DOE) testing. Get a custom font file personalized for your unique visual processing.
 
 ## 🎯 Features
 
@@ -21,8 +21,8 @@ Lexisolve.org helps individuals with dyslexia discover their optimal reading con
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/Lexisolve-org.git
-cd Lexisolve-org/app
+git clone https://github.com/YOUR_USERNAME/LexiCipher-org.git
+cd LexiCipher-org/app
 
 # Install dependencies
 npm install
@@ -36,7 +36,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 📁 Project Structure
 
 ```
-Lexisolve-org/
+LexiCipher-org/
 ├── app/                    # Next.js application
 │   ├── app/                # App Router pages
 │   │   ├── privacy/        # Privacy Policy page
@@ -49,7 +49,7 @@ Lexisolve-org/
 ├── LICENSE                 # MIT License
 ├── CONTRIBUTING.md         # Contribution guidelines
 ├── CODE_OF_CONDUCT.md      # Community standards
-└── lexisolve.org-project-plan.md  # Detailed project specification
+└── lexicipher.org-project-plan.md  # Detailed project specification
 ```
 
 ## 🔬 How It Works
@@ -83,7 +83,7 @@ Based on peer-reviewed research:
 - Schneps et al. (2013) - "E-Readers Are More Effective than Paper for some with dyslexia"
 - Rello & Baeza-Yates (2013) - "Good Fonts for Dyslexia"
 
-See the [project plan](lexisolve.org-project-plan.md) for full research references.
+See the [project plan](lexicipher.org-project-plan.md) for full research references.
 
 ## 📋 Legal Pages
 
@@ -93,7 +93,7 @@ See the [project plan](lexisolve.org-project-plan.md) for full research referenc
 
 ## ⚠️ Important Disclaimer
 
-**This tool is NOT a diagnostic tool for dyslexia.** Only qualified professionals can diagnose dyslexia. Lexisolve.org helps discover typographic preferences that may improve reading comfort.
+**This tool is NOT a diagnostic tool for dyslexia.** Only qualified professionals can diagnose dyslexia. LexiCipher.org helps discover typographic preferences that may improve reading comfort.
 
 ## 🤝 Contributing
 

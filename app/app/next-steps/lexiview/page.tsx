@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'LexiView | Lexisolve',
+    title: 'LexiView | LexiCipher',
     description: 'Read anything with your optimized settings using LexiView.',
 };
 

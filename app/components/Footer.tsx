@@ -9,7 +9,7 @@ export default function Footer() {
                 {/* Disclaimer */}
                 <div className="text-center mb-6">
                     <p className="text-sm text-gray-600 bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-2 inline-block">
-                        ⚠️ <strong>Lexisolve.org is NOT a diagnostic tool.</strong> Only qualified professionals can diagnose dyslexia.
+                        ⚠️ <strong>LexiCipher.org is NOT a diagnostic tool.</strong> Only qualified professionals can diagnose dyslexia.
                     </p>
                 </div>
 
@@ -31,7 +31,7 @@ export default function Footer() {
                         Accessibility
                     </Link>
                     <a
-                        href="https://github.com/lexisolve/lexisolve-org"
+                        href="https://github.com/lexicipher/lexicipher-org"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-600 hover:text-blue-600 hover:underline text-sm"
@@ -42,7 +42,7 @@ export default function Footer() {
 
                 {/* Copyright */}
                 <div className="text-center text-xs text-gray-500">
-                    <p>© {currentYear} Lexisolve.org. Open source under MIT License.</p>
+                    <p>© {currentYear} LexiCipher.org. Open source under MIT License.</p>
                     <p className="mt-1">
                         Fonts: OpenDyslexic (SIL OFL) • Roboto Flex (Apache 2.0)
                     </p>

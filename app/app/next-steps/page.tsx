@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Next Steps | Lexisolve',
+    title: 'Next Steps | LexiCipher',
     description: 'Learn how to use your personalized reading settings everywhere.',
 };
 
@@ -24,14 +24,14 @@ const nextStepsCards = [
         title: 'Install the Font',
         emoji: '📄',
         color: 'purple',
-        description: 'Use Lexisolve in Word, Google Docs, eBooks, Kindle, and other applications. Install the font on your device for system-wide access.',
+        description: 'Use LexiCipher in Word, Google Docs, eBooks, Kindle, and other applications. Install the font on your device for system-wide access.',
         href: '/next-steps/install-font',
     },
     {
         title: 'For Developers',
         emoji: '💻',
         color: 'orange',
-        description: 'Integrate Lexisolve into your website or application. Use our CSS exports or implement custom accessibility features.',
+        description: 'Integrate LexiCipher into your website or application. Use our CSS exports or implement custom accessibility features.',
         href: '/next-steps/developers',
     },
 ];

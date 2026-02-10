@@ -3,15 +3,15 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Lexisolve.org - Personalized Font Optimization",
+  title: "LexiCipher.org - Personalized Font Optimization",
   description:
     "Discover your optimal reading configuration through guided testing. Get a custom font file personalized for your unique visual processing.",
-  keywords: ["dyslexia", "font", "accessibility", "reading", "typography", "lexisolve"],
+  keywords: ["dyslexia", "font", "accessibility", "reading", "typography", "lexicipher"],
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Lexisolve",
+    title: "LexiCipher",
   },
   formatDetection: {
     telephone: false,

@@ -1,6 +1,6 @@
 # iOS App Store Deployment Guide
 
-This guide walks you through deploying Lexisolve to the iOS App Store using Capacitor.
+This guide walks you through deploying LexiCipher to the iOS App Store using Capacitor.
 
 ## Prerequisites
 
@@ -28,13 +28,13 @@ git commit -m "Add Capacitor configuration"
 git push
 
 # On Mac - clone or pull
-git clone https://github.com/YOUR_USERNAME/Lexisolve-org.git
+git clone https://github.com/YOUR_USERNAME/LexiCipher-org.git
 # or if already cloned:
 git pull
 ```
 
 ### Option B: USB/Cloud Drive
-Copy the entire `Lexisolve-org` folder to your Mac.
+Copy the entire `LexiCipher-org` folder to your Mac.
 
 ---
 
@@ -42,7 +42,7 @@ Copy the entire `Lexisolve-org` folder to your Mac.
 
 ```bash
 # Navigate to the app directory
-cd Lexisolve-org/app
+cd LexiCipher-org/app
 
 # Install npm dependencies
 npm install
@@ -98,9 +98,9 @@ Edit `ios/App/App/Info.plist` to add camera permissions for OCR:
 
 ```xml
 <key>NSCameraUsageDescription</key>
-<string>Lexisolve needs camera access to capture images for text recognition.</string>
+<string>LexiCipher needs camera access to capture images for text recognition.</string>
 <key>NSPhotoLibraryUsageDescription</key>
-<string>Lexisolve needs photo library access to select images for text recognition.</string>
+<string>LexiCipher needs photo library access to select images for text recognition.</string>
 ```
 
 ---
@@ -121,7 +121,7 @@ This opens the project in Xcode.
 2. Go to **Signing & Capabilities** tab
 3. Check **Automatically manage signing**
 4. Select your **Team** (your Apple Developer account)
-5. The **Bundle Identifier** should be `org.lexisolve.app`
+5. The **Bundle Identifier** should be `org.lexicipher.app`
 
 ### If you don't see your team:
 1. Xcode menu → **Preferences** → **Accounts**
@@ -178,10 +178,10 @@ iOS requires specific icon sizes. Place icons in `ios/App/App/Assets.xcassets/Ap
 2. Click **My Apps** → **+** → **New App**
 3. Fill in:
    - **Platform**: iOS
-   - **Name**: Lexisolve
+   - **Name**: LexiCipher
    - **Primary Language**: English (U.S.)
-   - **Bundle ID**: org.lexisolve.app
-   - **SKU**: lexisolve-001 (any unique string)
+   - **Bundle ID**: org.lexicipher.app
+   - **SKU**: lexicipher-001 (any unique string)
 
 ---
 
@@ -191,7 +191,7 @@ iOS requires specific icon sizes. Place icons in `ios/App/App/Assets.xcassets/Ap
 - **Subtitle**: "Personalized Reading Fonts"
 - **Description**: 
   ```
-  Lexisolve helps readers with dyslexia find their optimal font settings 
+  LexiCipher helps readers with dyslexia find their optimal font settings 
   through a personalized reading assessment. Using advanced typography 
   research, the app adjusts letter spacing, weight, and openings to 
   improve reading comfort and speed.
@@ -203,8 +203,8 @@ iOS requires specific icon sizes. Place icons in `ios/App/App/Assets.xcassets/Ap
   • Privacy-focused (all data stays on your device)
   ```
 - **Keywords**: dyslexia, reading, fonts, accessibility, OCR, text recognition
-- **Support URL**: https://lexisolve.org
-- **Privacy Policy URL**: https://lexisolve.org/privacy
+- **Support URL**: https://lexicipher.org
+- **Privacy Policy URL**: https://lexicipher.org/privacy
 
 ### Screenshots Required:
 - iPhone 6.7" (1290 x 2796) - for iPhone 15 Pro Max

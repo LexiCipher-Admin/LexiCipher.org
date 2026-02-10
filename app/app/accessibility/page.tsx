@@ -7,7 +7,7 @@ export default function AccessibilityStatement() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Our Commitment</h2>
         <p className="mb-4">
-          Lexisolve.org is committed to ensuring digital accessibility for people with disabilities.
+          LexiCipher.org is committed to ensuring digital accessibility for people with disabilities.
           We are continually improving the user experience for everyone and applying the relevant
           accessibility standards.
         </p>
@@ -103,7 +103,7 @@ export default function AccessibilityStatement() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Assistive Technology Compatibility</h2>
         <p className="mb-4">
-          Lexisolve.org is designed to be compatible with the following assistive technologies:
+          LexiCipher.org is designed to be compatible with the following assistive technologies:
         </p>
         <ul className="list-disc pl-6">
           <li>Screen readers (NVDA, JAWS, VoiceOver, TalkBack)</li>
@@ -129,14 +129,14 @@ export default function AccessibilityStatement() {
       <section className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Feedback & Contact</h2>
         <p className="mb-4">
-          We welcome your feedback on the accessibility of Lexisolve.org. Please let us know
+          We welcome your feedback on the accessibility of LexiCipher.org. Please let us know
           if you encounter accessibility barriers:
         </p>
         <ul className="list-disc pl-6 mb-4">
           <li>
             <strong>GitHub Issues:</strong> Report accessibility issues on our{" "}
             <a
-              href="https://github.com/lexisolve/lexisolve-org/issues"
+              href="https://github.com/lexicipher/lexicipher-org/issues"
               className="text-blue-600 hover:underline"
               target="_blank"
               rel="noopener noreferrer"

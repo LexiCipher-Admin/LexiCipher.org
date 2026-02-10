@@ -2,14 +2,15 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useOCR } from '@/lib/hooks/useOCR';
+import { useReadingSettings, DEFAULT_SETTINGS } from '@/lib/hooks/useReadingSettings';
 
 export default function LexiViewPage() {
     const { processImage, clearResult, terminateWorker, isProcessing, progress, result, error } = useOCR();
+    const { settings, isLoaded, fromTest, updateSetting, resetSettings } = useReadingSettings();
+    
     const [imagePreview, setImagePreview] = useState<string | null>(null);
-    const [fontSize, setFontSize] = useState(20);
-    const [lineHeight, setLineHeight] = useState(1.8);
-    const [letterSpacing, setLetterSpacing] = useState(0.05);
     const [copied, setCopied] = useState(false);
+    const [showAllSettings, setShowAllSettings] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const cameraInputRef = useRef<HTMLInputElement>(null);
 
@@ -53,6 +54,15 @@ export default function LexiViewPage() {
         }
     }, [result?.text]);
 
+    // Don't render controls until settings are loaded
+    if (!isLoaded) {
+        return (
+            <main className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+                <div className="text-gray-600 dark:text-gray-400">Loading settings...</div>
+            </main>
+        );
+    }
+
     return (
         <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
             {/* Header */}
@@ -68,6 +78,23 @@ export default function LexiViewPage() {
             </header>
 
             <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
+                {/* Settings Applied Banner */}
+                {fromTest && (
+                    <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4">
+                        <div className="flex items-center gap-3">
+                            <span className="text-2xl">✅</span>
+                            <div>
+                                <p className="font-medium text-green-800 dark:text-green-200">
+                                    Your personalized settings have been applied
+                                </p>
+                                <p className="text-sm text-green-600 dark:text-green-400">
+                                    Based on your reading test results. Adjust below if needed.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 {/* Input Section */}
                 {!imagePreview && !result && (
                     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
@@ -217,50 +244,135 @@ export default function LexiViewPage() {
 
                         {/* Text Display Settings */}
                         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
-                            <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Display Settings</h3>
-                            <div className="grid grid-cols-3 gap-4">
+                            <div className="flex items-center justify-between mb-3">
+                                <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Display Settings
+                                    {fromTest && (
+                                        <span className="ml-2 text-xs text-green-600 dark:text-green-400">
+                                            (from your test)
+                                        </span>
+                                    )}
+                                </h3>
+                                <div className="flex items-center gap-2">
+                                    <button
+                                        onClick={() => setShowAllSettings(!showAllSettings)}
+                                        className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+                                    >
+                                        {showAllSettings ? 'Show Less' : 'Show All Settings'}
+                                    </button>
+                                    <button
+                                        onClick={resetSettings}
+                                        className="text-xs text-gray-500 dark:text-gray-400 hover:underline"
+                                    >
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            {/* Primary Controls (always visible) */}
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                 <div>
                                     <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
-                                        Font Size: {fontSize}px
+                                        Font Size: {settings.fontSize}px
                                     </label>
                                     <input
                                         type="range"
                                         min="14"
                                         max="32"
-                                        value={fontSize}
-                                        onChange={(e) => setFontSize(Number(e.target.value))}
+                                        value={settings.fontSize}
+                                        onChange={(e) => updateSetting('fontSize', Number(e.target.value))}
                                         className="w-full"
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
-                                        Line Height: {lineHeight}
+                                        Line Height: {settings.lineHeight.toFixed(1)}
                                     </label>
                                     <input
                                         type="range"
-                                        min="1.2"
+                                        min="1.3"
                                         max="2.5"
                                         step="0.1"
-                                        value={lineHeight}
-                                        onChange={(e) => setLineHeight(Number(e.target.value))}
+                                        value={settings.lineHeight}
+                                        onChange={(e) => updateSetting('lineHeight', Number(e.target.value))}
                                         className="w-full"
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
-                                        Letter Spacing: {letterSpacing}em
+                                        Letter Spacing: {settings.letterSpacing.toFixed(2)}em
                                     </label>
                                     <input
                                         type="range"
                                         min="0"
-                                        max="0.15"
+                                        max="0.25"
                                         step="0.01"
-                                        value={letterSpacing}
-                                        onChange={(e) => setLetterSpacing(Number(e.target.value))}
+                                        value={settings.letterSpacing}
+                                        onChange={(e) => updateSetting('letterSpacing', Number(e.target.value))}
                                         className="w-full"
                                     />
                                 </div>
                             </div>
+
+                            {/* Extended Controls (toggleable) */}
+                            {showAllSettings && (
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                    <div>
+                                        <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                                            Word Spacing: {settings.wordSpacing.toFixed(2)}em
+                                        </label>
+                                        <input
+                                            type="range"
+                                            min="0"
+                                            max="0.40"
+                                            step="0.01"
+                                            value={settings.wordSpacing}
+                                            onChange={(e) => updateSetting('wordSpacing', Number(e.target.value))}
+                                            className="w-full"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                                            Font Weight: {settings.fontWeight}
+                                        </label>
+                                        <input
+                                            type="range"
+                                            min="300"
+                                            max="700"
+                                            step="100"
+                                            value={settings.fontWeight}
+                                            onChange={(e) => updateSetting('fontWeight', Number(e.target.value))}
+                                            className="w-full"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                                            Bottom Weight: {settings.bwgt}
+                                        </label>
+                                        <input
+                                            type="range"
+                                            min="0"
+                                            max="100"
+                                            value={settings.bwgt}
+                                            onChange={(e) => updateSetting('bwgt', Number(e.target.value))}
+                                            className="w-full"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                                            Line Width: {settings.paragraphWidth}ch
+                                        </label>
+                                        <input
+                                            type="range"
+                                            min="40"
+                                            max="80"
+                                            value={settings.paragraphWidth}
+                                            onChange={(e) => updateSetting('paragraphWidth', Number(e.target.value))}
+                                            className="w-full"
+                                        />
+                                    </div>
+                                </div>
+                            )}
                         </div>
 
                         {/* Extracted Text */}
@@ -268,10 +380,15 @@ export default function LexiViewPage() {
                             <div
                                 className="prose dark:prose-invert max-w-none text-gray-900 dark:text-gray-100"
                                 style={{
-                                    fontSize: `${fontSize}px`,
-                                    lineHeight: lineHeight,
-                                    letterSpacing: `${letterSpacing}em`,
-                                    fontFamily: 'var(--font-lexisolve, system-ui)'
+                                    fontSize: `${settings.fontSize}px`,
+                                    lineHeight: settings.lineHeight,
+                                    letterSpacing: `${settings.letterSpacing}em`,
+                                    wordSpacing: `${settings.wordSpacing}em`,
+                                    fontWeight: settings.fontWeight,
+                                    fontVariationSettings: `'BWGT' ${settings.bwgt}`,
+                                    maxWidth: `${settings.paragraphWidth}ch`,
+                                    margin: '0 auto',
+                                    fontFamily: "'LexiCipher BWGT', 'OpenDyslexic', system-ui, sans-serif"
                                 }}
                             >
                                 {result.text.split('\n').map((paragraph, i) => (
@@ -298,6 +415,25 @@ export default function LexiViewPage() {
                             </details>
                         )}
                     </>
+                )}
+
+                {/* Take the Test CTA (if no test results) */}
+                {!fromTest && !result && (
+                    <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6 text-center">
+                        <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-2">
+                            Get Personalized Settings
+                        </h3>
+                        <p className="text-sm text-blue-700 dark:text-blue-300 mb-4">
+                            Take a 10-minute reading test to discover your optimal typography settings.
+                            Your results will be automatically applied here.
+                        </p>
+                        <a
+                            href="/test"
+                            className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                        >
+                            Take the Test →
+                        </a>
+                    </div>
                 )}
 
                 {/* Info Footer */}

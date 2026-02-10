@@ -35,7 +35,7 @@ export interface ReadingPassageProps {
 }
 
 /**
- * ReadingPassage displays text with the Lexisolve BWGT variable font
+ * ReadingPassage displays text with the LexiCipher BWGT variable font
  * and configurable typography settings for DOE testing.
  * 
  * @example
@@ -66,7 +66,7 @@ export function ReadingPassage({
         const clampedBwgt = Math.max(0, Math.min(100, bwgt));
 
         return {
-            fontFamily: '"Lexisolve BWGT", Arial, sans-serif',
+            fontFamily: '"LexiCipher BWGT", Arial, sans-serif',
             fontVariationSettings: `'BWGT' ${clampedBwgt}`,
             letterSpacing: `${letterSpacing}em`,
             wordSpacing: `${wordSpacing}em`,
@@ -90,7 +90,7 @@ export function ReadingPassage({
                 <h2
                     className="text-xl font-semibold mb-4"
                     style={{
-                        fontFamily: '"Lexisolve BWGT", Arial, sans-serif',
+                        fontFamily: '"LexiCipher BWGT", Arial, sans-serif',
                         fontVariationSettings: `'BWGT' ${Math.max(0, Math.min(100, bwgt))}`,
                     }}
                 >
@@ -121,7 +121,7 @@ export function ReadingPassagePreview({
     label,
 }: Omit<ReadingPassageProps, 'title' | 'maxWidth' | 'className' | 'style'> & { label?: string }) {
     const styles: CSSProperties = {
-        fontFamily: '"Lexisolve BWGT", Arial, sans-serif',
+        fontFamily: '"LexiCipher BWGT", Arial, sans-serif',
         fontVariationSettings: `'BWGT' ${Math.max(0, Math.min(100, bwgt))}`,
         letterSpacing: `${letterSpacing}em`,
         wordSpacing: `${wordSpacing}em`,

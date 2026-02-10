@@ -1,5 +1,5 @@
 {
-  "name": "lexisolve-org",
+  "name": "lexicipher-org",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,10 +12,14 @@
     "cap:build": "npm run build && npx cap sync"
   },
   "dependencies": {
+    "@capacitor/cli": "^8.0.2",
+    "@capacitor/core": "^8.0.2",
+    "@capacitor/ios": "^8.0.2",
     "next": "^15.0.0",
+    "opentype.js": "^1.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "opentype.js": "^1.3.4"
+    "tesseract.js": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

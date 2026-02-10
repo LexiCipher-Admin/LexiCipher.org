@@ -88,7 +88,7 @@ if (!fs.existsSync(iconsDir)) {
     fs.mkdirSync(iconsDir);
 }
 
-// Generate icons with Lexisolve brand colors (dark blue: #1e3a5f)
+// Generate icons with LexiCipher brand colors (dark blue: #1e3a5f)
 const r = 0x1e, g = 0x3a, b = 0x5f;
 
 const sizes = [16, 48, 128];

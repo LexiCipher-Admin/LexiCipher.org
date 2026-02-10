@@ -1,6 +1,6 @@
-# Contributing to Lexisolve.org
+# Contributing to LexiCipher.org
 
-Thank you for your interest in contributing to Lexisolve.org! This project aims to help people with dyslexia discover their optimal reading configuration.
+Thank you for your interest in contributing to LexiCipher.org! This project aims to help people with dyslexia discover their optimal reading configuration.
 
 ## How to Contribute
 
@@ -27,8 +27,8 @@ Thank you for your interest in contributing to Lexisolve.org! This project aims 
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/Lexisolve-org.git
-cd Lexisolve-org/app
+git clone https://github.com/YOUR_USERNAME/LexiCipher-org.git
+cd LexiCipher-org/app
 
 # Install dependencies
 npm install

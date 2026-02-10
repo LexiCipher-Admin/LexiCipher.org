@@ -319,7 +319,7 @@ export default function OptimizationScreen({
               }}
             >
               <div style={{ maxWidth: REFERENCE_CSS.maxWidth }} className="mx-auto">
-                <p className="text-slate-800 font-['Lexisolve']">
+                <p className="text-slate-800 font-['LexiCipher']">
                   {currentPassage.text}
                 </p>
               </div>
@@ -345,7 +345,7 @@ export default function OptimizationScreen({
               }}
             >
               <div style={{ maxWidth: cssValues.maxWidth }} className="mx-auto">
-                <p className="text-slate-800 font-['Lexisolve']">
+                <p className="text-slate-800 font-['LexiCipher']">
                   {currentPassage.text}
                 </p>
               </div>

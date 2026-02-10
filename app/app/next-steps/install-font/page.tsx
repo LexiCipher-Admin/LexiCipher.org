@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Install Lexisolve Font | Lexisolve',
-    description: 'Install the Lexisolve font on your devices including Kindle, Windows, Mac, and iOS.',
+    title: 'Install LexiCipher Font | LexiCipher',
+    description: 'Install the LexiCipher font on your devices including Kindle, Windows, Mac, and iOS.',
 };
 
 export default function InstallFontPage() {
@@ -21,18 +21,18 @@ export default function InstallFontPage() {
                     </div>
                     <h1 className="text-4xl font-bold text-dark-blue">Install the Font</h1>
                     <p className="text-xl text-gray-600">
-                        Use Lexisolve in any application that supports custom fonts
+                        Use LexiCipher in any application that supports custom fonts
                     </p>
                 </div>
 
                 {/* Download */}
                 <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-8 mb-8 text-center">
-                    <h2 className="text-2xl font-semibold text-dark-blue mb-4">Download Lexisolve Font</h2>
+                    <h2 className="text-2xl font-semibold text-dark-blue mb-4">Download LexiCipher Font</h2>
                     <p className="text-gray-600 mb-6">
                         Get the variable font file for installation on your devices.
                     </p>
                     <a
-                        href="/fonts/Lexisolve-Variable.ttf"
+                        href="/fonts/LexiCipher-Variable.ttf"
                         download
                         className="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors"
                     >
@@ -60,7 +60,7 @@ export default function InstallFontPage() {
                         </li>
                         <li className="flex gap-3">
                             <span className="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
-                            <span>Copy the Lexisolve font file into the <code className="bg-gray-100 px-1 rounded">fonts</code> folder</span>
+                            <span>Copy the LexiCipher font file into the <code className="bg-gray-100 px-1 rounded">fonts</code> folder</span>
                         </li>
                         <li className="flex gap-3">
                             <span className="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
@@ -68,7 +68,7 @@ export default function InstallFontPage() {
                         </li>
                         <li className="flex gap-3">
                             <span className="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold">5</span>
-                            <span>On Kindle: Open a book → Tap top of screen → Aa (font) → Select &quot;Lexisolve&quot;</span>
+                            <span>On Kindle: Open a book → Tap top of screen → Aa (font) → Select &quot;LexiCipher&quot;</span>
                         </li>
                     </ol>
                     <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">

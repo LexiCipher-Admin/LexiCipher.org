@@ -280,7 +280,7 @@ function generateSessionId(): string {
 // LOCAL STORAGE UTILITIES
 // ============================================================================
 
-const STORAGE_KEY = 'lexisolve_session';
+const STORAGE_KEY = 'lexicipher_session';
 
 /**
  * Save session to localStorage

@@ -14,15 +14,15 @@ interface TestPassageProps {
  * 
  * BASELINE vs TEST FONT:
  * - Baseline uses Roboto (neutral font) for objective comparison
- * - Test samples use Lexisolve/OpenDyslexic to test typography changes
+ * - Test samples use LexiCipher/OpenDyslexic to test typography changes
  * 
  * This ensures comparisons aren't biased by OpenDyslexic's built-in features.
  */
 export default function TestPassage({ passage, cssValues, isBaseline = false }: TestPassageProps) {
-  // Baseline uses neutral Roboto font; test samples use Lexisolve/OpenDyslexic
+  // Baseline uses neutral Roboto font; test samples use LexiCipher/OpenDyslexic
   const fontFamily = isBaseline
     ? "'Roboto', 'Arial', sans-serif"
-    : "'Lexisolve', 'OpenDyslexic', 'Comic Sans MS', sans-serif";
+    : "'LexiCipher', 'OpenDyslexic', 'Comic Sans MS', sans-serif";
 
   return (
     <div className="w-full">

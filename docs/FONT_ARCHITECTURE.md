@@ -1,8 +1,8 @@
-# Lexisolve Font Architecture
+# LexiCipher Font Architecture
 
 ## Overview
 
-Lexisolve uses **variable fonts** to deliver personalized typography. This document explains the key concepts and how they're implemented.
+LexiCipher uses **variable fonts** to deliver personalized typography. This document explains the key concepts and how they're implemented.
 
 ---
 
@@ -16,7 +16,7 @@ A variable font is a single font file that contains multiple stylistic variation
 
 **Masters** are the hand-designed anchor points along an axis. The font software uses these as reference points to generate intermediate values.
 
-For Lexisolve's BWGT (Bottom Weight) axis:
+For LexiCipher's BWGT (Bottom Weight) axis:
 
 | Master   | BWGT Value | Description                             |
 | -------- | ---------- | --------------------------------------- |
@@ -58,9 +58,9 @@ Developer Machine
 │   ├── master-50.ufo (BWGT 50)
 │   └── master-100.ufo (BWGT 100)
 ├── Designspace file
-│   └── LexisolveBWGT.designspace
+│   └── LexiCipherBWGT.designspace
 └── Output
-    └── LexisolveBWGT.woff2 (~300-500KB)
+    └── LexiCipherBWGT.woff2 (~300-500KB)
 ```
 
 The compiled `.woff2` file is committed to the repository and deployed with the website.
@@ -79,7 +79,7 @@ No server-side processing—everything happens client-side:
 ```css
 /* The browser interpolates automatically */
 .test-passage {
-  font-family: 'LexisolveBWGT', sans-serif;
+  font-family: 'LexiCipherBWGT', sans-serif;
   font-variation-settings: 'BWGT' 29;
 }
 ```
@@ -90,7 +90,7 @@ No server-side processing—everything happens client-side:
 import opentype from 'opentype.js';
 
 async function generateCustomFont(bwgtValue) {
-  const font = await opentype.load('/fonts/LexisolveBWGT.woff2');
+  const font = await opentype.load('/fonts/LexiCipherBWGT.woff2');
   // Instance the variable font at the user's optimal value
   const instanced = instanceFont(font, { BWGT: bwgtValue });
   return instanced.toArrayBuffer();
@@ -123,7 +123,7 @@ async function generateCustomFont(bwgtValue) {
 
 ## BWGT in DOE Testing
 
-BWGT is integrated as the 7th factor in Lexisolve's DOE screening phase.
+BWGT is integrated as the 7th factor in LexiCipher's DOE screening phase.
 
 ### Design Matrix Integration
 
@@ -183,5 +183,5 @@ This extension requires additional masters and is documented in the project plan
 
 ## Related Documentation
 
-- `lexisolve.org-project-plan.md` - Full project plan with Phase 0A details
+- `lexicipher.org-project-plan.md` - Full project plan with Phase 0A details
 - `app/lib/passages/CALIBRATION_GUIDE.md` - Passage calibration methodology
