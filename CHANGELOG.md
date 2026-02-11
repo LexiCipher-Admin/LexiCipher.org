@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- **Vercel Deployment Documentation** - Created comprehensive `VERCEL_DEPLOYMENT.md` guide with configuration instructions, troubleshooting, and best practices.
+
+### Fixed
+- **Vercel Deployment Configuration** - Fixed "No Next.js version detected" error by updating `vercel.json` to work with monorepo structure where Next.js app lives in `app/` subdirectory. Commands simplified to work with Root Directory setting.
+
 ### Changed
 - **Project Rebranding**: Renamed project from **Lexisolve** to **LexiCipher** to address intellectual property considerations and finalize branding.
 - **Font Renaming**: 

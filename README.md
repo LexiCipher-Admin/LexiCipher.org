@@ -33,6 +33,21 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+This project is optimized for deployment on Vercel with a static export configuration.
+
+**Quick Deploy:**
+1. Connect your GitHub repository to Vercel
+2. Set **Root Directory** to `app` in project settings
+3. Deploy!
+
+For detailed instructions including troubleshooting, see [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md).
+
+**Live Site:** The app is currently deployed at `lexi-cipher-org-cyan.vercel.app`
+
 ## 📁 Project Structure
 
 ```
