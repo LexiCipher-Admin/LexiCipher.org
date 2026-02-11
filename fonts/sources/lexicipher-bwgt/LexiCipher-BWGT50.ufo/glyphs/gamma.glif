@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="gamma" format="2">
+  <advance width="1027"/>
+  <unicode hex="03B3"/>
+  <outline>
+    <contour>
+      <point x="612" y="139" type="move"/>
+      <point x="612" y="-469" type="line"/>
+      <point x="427" y="-469" type="line"/>
+      <point x="427" y="139" type="line"/>
+    </contour>
+    <contour>
+      <point x="514" y="260" type="move"/>
+      <point x="802" y="974" type="line"/>
+      <point x="992" y="974" type="line"/>
+      <point x="591" y="0" type="line"/>
+      <point x="468" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="236" y="974" type="move"/>
+      <point x="532" y="259" type="line"/>
+      <point x="573" y="0" type="line"/>
+      <point x="450" y="0" type="line"/>
+      <point x="47" y="974" type="line"/>
+    </contour>
+  </outline>
+</glyph>

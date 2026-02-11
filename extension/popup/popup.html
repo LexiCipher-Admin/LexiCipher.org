@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexiPage Settings</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>LexiPage</h1>
+            <p class="subtitle">LexiCipher Reading Settings</p>
+        </header>
+
+        <!-- Global Toggle -->
+        <div class="toggle-section">
+            <label class="toggle">
+                <input type="checkbox" id="globalToggle" checked>
+                <span class="toggle-slider"></span>
+                <span class="toggle-label">Enable on all sites</span>
+            </label>
+        </div>
+
+        <!-- Import Section -->
+        <div class="import-section">
+            <label for="importFile" class="import-btn">
+                📥 Import Settings (JSON)
+            </label>
+            <input type="file" id="importFile" accept=".json" hidden>
+            <p class="import-hint">Export from lexicipher.org</p>
+        </div>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel">
+            <h2>Typography Settings</h2>
+
+            <div class="setting-group">
+                <label for="letterSpacing">Letter Spacing</label>
+                <div class="slider-row">
+                    <input type="range" id="letterSpacing" min="0" max="0.3" step="0.01" value="0.06">
+                    <span class="slider-value" id="letterSpacingValue">0.06em</span>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label for="wordSpacing">Word Spacing</label>
+                <div class="slider-row">
+                    <input type="range" id="wordSpacing" min="0" max="0.5" step="0.01" value="0.10">
+                    <span class="slider-value" id="wordSpacingValue">0.10em</span>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label for="lineHeight">Line Height</label>
+                <div class="slider-row">
+                    <input type="range" id="lineHeight" min="1.2" max="2.5" step="0.1" value="1.6">
+                    <span class="slider-value" id="lineHeightValue">1.6</span>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label for="fontWeight">Font Weight</label>
+                <div class="slider-row">
+                    <input type="range" id="fontWeight" min="300" max="700" step="50" value="400">
+                    <span class="slider-value" id="fontWeightValue">400</span>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label for="maxWidth">Line Width</label>
+                <div class="slider-row">
+                    <input type="range" id="maxWidth" min="40" max="90" step="5" value="60">
+                    <span class="slider-value" id="maxWidthValue">60ch</span>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label for="bwgt">Bottom Weight (BWGT)</label>
+                <div class="slider-row">
+                    <input type="range" id="bwgt" min="0" max="100" step="1" value="50">
+                    <span class="slider-value" id="bwgtValue">50</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Site Toggle -->
+        <div class="site-toggle">
+            <div class="site-info">
+                <span class="site-icon">🌐</span>
+                <span class="site-domain" id="currentDomain">example.com</span>
+            </div>
+            <button id="siteToggle" class="site-toggle-btn enabled">
+                ✓ Enabled
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="https://lexicipher.org" target="_blank">lexicipher.org</a>
+            <span class="version">v1.0.0</span>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

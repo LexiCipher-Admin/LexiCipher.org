@@ -1,0 +1,54 @@
+{
+    "manifest_version": 3,
+    "name": "LexiPage",
+    "version": "1.0.0",
+    "description": "Apply your LexiCipher reading settings to any webpage for improved readability",
+    "author": "LexiCipher.org",
+    "homepage_url": "https://lexicipher.org",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png"
+        },
+        "default_title": "LexiPage - Reading Settings"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content/content.js"
+            ],
+            "css": [],
+            "run_at": "document_start"
+        }
+    ],
+    "background": {
+        "service_worker": "background/background.js"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "fonts/LexiCipher-BWGT-VF.ttf"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
