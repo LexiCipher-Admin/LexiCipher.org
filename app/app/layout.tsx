@@ -33,7 +33,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
       </head>
       <body className="antialiased min-h-screen flex flex-col">
-        <header className="w-full flex justify-center py-4 px-6 bg-cream">
+        <header className="w-full flex justify-center pt-6 pb-0 px-6 bg-cream">
           <Link href="/" className="flex flex-col items-center gap-1 hover:opacity-90 transition-opacity">
             <Image
               src="/logo-stacked.svg"

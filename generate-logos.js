@@ -83,7 +83,7 @@ const iconCloses = (iconSvg.match(/<\/g>/g) || []).length;
 console.log(`✓ logo-icon.svg: <g> opens=${iconOpens} closes=${iconCloses} ${iconOpens === iconCloses ? '✓' : '✗ MISMATCH'}`);
 
 // ─── 2. logo-stacked.svg (owl + text + rule) ─────────────────────────────────
-const stackedViewBox = '195 38 345 360';
+const stackedViewBox = '195 20 345 378';
 
 const stackedSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="${stackedViewBox}">
