@@ -48,7 +48,18 @@ export interface FontParameters {
   fontSize: -1 | 1;
   /** Paragraph width: -1 = 80ch, +1 = 40ch (was 65ch-50ch) */
   paragraphWidth: -1 | 1;
-  /** Bottom weight (BWGT axis): -1 = 0, +1 = 100 */
+  /**
+   * Bottom weight (BWGT axis): -1 = 0, +1 = 100
+   *
+   * Perceptual axis: CONTRAST sensitivity (not crowding).
+   * Heavier strokes (high BWGT) reduce the contrast between letter strokes
+   * and the background, making text harder to read for contrast-sensitive users.
+   * Contrast-sensitive dyslexic readers typically prefer LOWER BWGT (thinner
+   * strokes) to maximise letter-background contrast.
+   *
+   * QA finding (Feb 2026): BWGT was previously misclassified as a crowding-axis
+   * factor. Controlled bot runs (n=20) confirmed it is a contrast-axis effect.
+   */
   bwgt: -1 | 1;
 }
 

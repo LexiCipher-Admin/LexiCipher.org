@@ -18,7 +18,7 @@ export interface NormalizedParams {
   fontWeight: number;     // 0 = 300, 1 = 700 (was 400-600)
   fontSize: number;       // 0 = -10%, 1 = 25% (was 0-15%)
   paragraphWidth: number; // 0 = 80ch, 1 = 40ch (was 65-50ch)
-  bwgt: number;           // 0 = 0, 1 = 100 (BWGT axis)
+  bwgt: number;           // 0 = 0, 1 = 100 (BWGT axis — contrast factor: lower = higher contrast)
 }
 
 export interface BayesianDataPoint {

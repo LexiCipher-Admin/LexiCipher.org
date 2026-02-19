@@ -13,7 +13,7 @@ export interface ReadingSettings {
   fontWeight: number;       // 300-700
   fontSize: number;         // in px (14-32)
   paragraphWidth: number;   // in ch (40-80)
-  bwgt: number;             // 0-100 (BWGT variable font axis)
+  bwgt: number;             // 0-100 (BWGT variable font axis — contrast factor: lower = higher contrast)
   
   // Metadata
   source: 'test' | 'manual' | 'default';
@@ -21,6 +21,7 @@ export interface ReadingSettings {
 }
 
 // Default settings (neutral values)
+// BWGT defaults to 0: contrast-optimal for most dyslexic readers (QA finding Feb 2026)
 export const DEFAULT_SETTINGS: ReadingSettings = {
   letterSpacing: 0.05,
   wordSpacing: 0.10,
@@ -28,7 +29,7 @@ export const DEFAULT_SETTINGS: ReadingSettings = {
   fontWeight: 400,
   fontSize: 18,
   paragraphWidth: 60,
-  bwgt: 50,
+  bwgt: 0,  // contrast-optimal default (was 50)
   source: 'default',
 };
 
