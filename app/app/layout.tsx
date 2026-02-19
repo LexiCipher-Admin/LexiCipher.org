@@ -31,10 +31,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased min-h-screen flex flex-col">
-        <header className="w-full flex justify-center pt-6 pb-2 px-6 bg-cream">
-          <Link href="/" className="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
+        <header className="w-full flex justify-center pt-1 pb-0 px-6 bg-cream">
+          <Link href="/" className="flex flex-col items-center gap-1 hover:opacity-90 transition-opacity">
             <Image
               src="/logo-icon.svg"
               alt="LexiCipher owl logo"
@@ -42,12 +45,12 @@ export default function RootLayout({
               height={200}
               priority
             />
-            <div className="text-center leading-tight">
-              <span className="text-4xl md:text-5xl font-bold" style={{ color: '#1E3A5F' }}>Lexi</span>
-              <span className="text-4xl md:text-5xl font-bold" style={{ color: '#C0392B' }}>Cipher</span>
-              <span className="text-2xl md:text-3xl font-bold" style={{ color: '#1E3A5F' }}>.org</span>
+            <div className="text-center leading-none" style={{ fontFamily: "'Aleo', serif" }}>
+              <span className="text-5xl md:text-6xl font-bold" style={{ color: '#1E3A5F' }}>Lexi</span>
+              <span className="text-5xl md:text-6xl font-bold" style={{ color: '#C0392B' }}>Cipher</span>
+              <span className="text-3xl md:text-4xl font-bold" style={{ color: '#1E3A5F' }}>.org</span>
             </div>
-            <p className="text-xs tracking-widest font-semibold uppercase" style={{ color: '#1E3A5F' }}>Fonts for Dyslexic Reading</p>
+            <p className="text-xs tracking-widest font-semibold uppercase mt-0" style={{ color: '#1E3A5F', fontFamily: "'Roboto Condensed', sans-serif" }}>Fonts for Dyslexic Reading</p>
           </Link>
         </header>
         <main className="flex-grow">{children}</main>

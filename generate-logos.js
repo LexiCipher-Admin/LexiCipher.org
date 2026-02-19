@@ -69,7 +69,7 @@ const leftRule = leftRuleMatch ? leftRuleMatch[0] : '';
 console.log('Left rule found:', !!leftRule);
 
 // ─── 1. logo-icon.svg (owl only) ─────────────────────────────────────────────
-const iconViewBox = '245 38 215 275';
+const iconViewBox = '245 20 215 293';
 
 const iconSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="${iconViewBox}">
