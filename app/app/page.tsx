@@ -6,9 +6,6 @@ export default function Home() {
       <main className="flex flex-1 flex-col items-center justify-center p-8">
         <div className="max-w-3xl text-center space-y-8">
           {/* Hero */}
-          <h1 className="text-4xl md:text-5xl font-bold text-dark-blue">
-            LexiCipher.org
-          </h1>
           <p className="text-xl md:text-2xl text-gray-700">
             Discover your optimal reading configuration through guided testing
           </p>
