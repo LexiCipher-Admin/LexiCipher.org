@@ -11,7 +11,7 @@
  * - D: Font Weight (300 vs 700)              - was 400-600
  * - E: Font Size (-10% vs +25%) = ABC        - was 0-15%
  * - F: Paragraph Width (80ch vs 40ch) = ABD  - was 65-50ch
- * - G: BWGT (0 vs 100)             = ACD  [contrast axis — lower = higher contrast]
+ * - G: BWGT (0 vs 100)             = ACD
  * 
  * Defining relation: I = ABCE = ABDF = ACDG = CDEF = BDEG = BCFG = AEFG
  */
@@ -252,9 +252,7 @@ export function describeRun(params: FontParameters): string[] {
   if (params.fontWeight === 1) descriptions.push('Heavier weight (700)');
   if (params.fontSize === 1) descriptions.push('Larger text (+25%)');
   if (params.paragraphWidth === 1) descriptions.push('Narrower lines (40ch)');
-  // BWGT high = heavier strokes = LOWER contrast (contrast-axis factor)
-  if (params.bwgt === 1) descriptions.push('Heavy bottom weight (BWGT 100) — lower contrast');
-  if (params.bwgt === -1) descriptions.push('Light bottom weight (BWGT 0) — higher contrast');
+  if (params.bwgt === 1) descriptions.push('Heavy bottom weight (BWGT 100)');
 
   if (descriptions.length === 0) descriptions.push('Baseline settings');
 

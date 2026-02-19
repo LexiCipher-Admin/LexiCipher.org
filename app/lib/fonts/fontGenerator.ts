@@ -7,11 +7,6 @@
  * Note: Some settings like letter-spacing and line-height cannot be baked into
  * the font file itself and are provided as CSS recommendations instead.
  * The BWGT (bottom weight) axis IS embedded in the variable font.
- *
- * BWGT is a CONTRAST-axis factor (not crowding). Heavier strokes (high BWGT)
- * reduce letter-background contrast. Contrast-sensitive dyslexic readers
- * typically prefer lower BWGT values. Default is 0 (maximum contrast).
- * QA finding: Feb 2026 — confirmed via 20 controlled bot runs.
  */
 
 import { OptimizationResult } from '../types/session';
@@ -28,11 +23,6 @@ export interface FontSettings {
 
 /**
  * Default font settings (center of ranges)
- *
- * BWGT defaults to 0 (not 50) because BWGT is a contrast-axis factor.
- * Most dyslexic readers are contrast-sensitive and benefit from thinner
- * strokes (lower BWGT = higher letter-background contrast). The DOE will
- * override this if the user's test shows a preference for higher BWGT.
  */
 export const DEFAULT_SETTINGS: FontSettings = {
   letterSpacing: 6,
@@ -41,7 +31,7 @@ export const DEFAULT_SETTINGS: FontSettings = {
   fontWeight: 500,
   fontSize: 7.5,
   paragraphWidth: 57,
-  bwgt: 0,  // contrast-optimal default (was 50)
+  bwgt: 50,
 };
 
 /**
