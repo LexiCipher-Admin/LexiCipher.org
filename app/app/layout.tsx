@@ -33,15 +33,21 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
       </head>
       <body className="antialiased min-h-screen flex flex-col">
-        <header className="w-full flex justify-center pt-6 pb-0 px-6 bg-cream">
-          <Link href="/" className="flex flex-col items-center gap-1 hover:opacity-90 transition-opacity">
+        <header className="w-full flex justify-center pt-6 pb-2 px-6 bg-cream">
+          <Link href="/" className="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
             <Image
-              src="/logo-stacked.svg"
-              alt="LexiCipher.org — Fonts for Dyslexic Reading"
-              width={240}
-              height={240}
+              src="/logo-icon.svg"
+              alt="LexiCipher owl logo"
+              width={200}
+              height={200}
               priority
             />
+            <div className="text-center leading-tight">
+              <span className="text-4xl md:text-5xl font-bold" style={{ color: '#1E3A5F' }}>Lexi</span>
+              <span className="text-4xl md:text-5xl font-bold" style={{ color: '#C0392B' }}>Cipher</span>
+              <span className="text-2xl md:text-3xl font-bold" style={{ color: '#1E3A5F' }}>.org</span>
+            </div>
+            <p className="text-xs tracking-widest font-semibold uppercase" style={{ color: '#1E3A5F' }}>Fonts for Dyslexic Reading</p>
           </Link>
         </header>
         <main className="flex-grow">{children}</main>
