@@ -41,8 +41,8 @@ export default function RootLayout({
             <Image
               src="/logo-icon.svg"
               alt="LexiCipher owl logo"
-              width={200}
-              height={200}
+              width={175}
+              height={175}
               priority
             />
             <div className="text-center leading-none" style={{ fontFamily: "'Aleo', serif" }}>
