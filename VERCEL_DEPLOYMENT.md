@@ -51,9 +51,34 @@ Vercel will now correctly detect Next.js because it will find the `package.json`
    - Set Root Directory to `app` (see above)
    - Deploy
 
-2. **Subsequent deployments**:
-   - Push to your main branch
+2. **Subsequent deployments (main branch)**:
+   - Push to `main` branch
    - Vercel will automatically build and deploy
+
+3. **Deploying the `dev` branch**:
+   - Vercel only auto-deploys `main` by default
+   - `dev` branch must be triggered manually via the deploy hook (see below)
+
+## Dev Branch Deployment (Deploy Hook)
+
+The `dev` branch has a Vercel deploy hook. To trigger a deployment after pushing to `dev`:
+
+```bash
+curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_DvKPFVBrERjOlyqAp9tPsY1P77NN/BOYR99PlWV"
+```
+
+This can be combined with a push in one command:
+```bash
+git push origin dev && curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_DvKPFVBrERjOlyqAp9tPsY1P77NN/BOYR99PlWV"
+```
+
+### Automating with GitHub Actions (future)
+A GitHub Actions workflow file exists at `.github/workflows/deploy-dev.yml` that would automate this on every push to `dev`. However, pushing workflow files requires the GitHub Personal Access Token to have the **`workflow` scope**.
+
+To enable:
+1. Go to github.com → Profile → **Settings** → **Developer settings** → **Personal access tokens**
+2. Edit your token and check the **`workflow`** checkbox
+3. Push the workflow file: `git add .github/workflows/deploy-dev.yml && git commit -m "ci: add deploy hook workflow" && git push origin dev`
 
 ## Next.js Static Export
 
