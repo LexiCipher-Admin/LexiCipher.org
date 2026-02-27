@@ -3,5 +3,11 @@
     "buildCommand": "npm run build",
     "installCommand": "npm install",
     "framework": "nextjs",
-    "outputDirectory": ".next"
+    "outputDirectory": ".next",
+    "crons": [
+        {
+            "path": "/api/cron/export-dataset",
+            "schedule": "0 0 * * *"
+        }
+    ]
 }
