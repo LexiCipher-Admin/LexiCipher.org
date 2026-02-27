@@ -6,22 +6,6 @@ import { Ratelimit } from '@upstash/ratelimit';
 
 export const dynamic = 'force-dynamic';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
-
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-});
-
-const ratelimit = new Ratelimit({
-  redis,
-  limiter: Ratelimit.slidingWindow(5, '1 h'),
-  analytics: false,
-});
-
 const bucketEnum = z.enum(['low', 'medium-low', 'medium-high', 'high']);
 
 const telemetrySchema = z.object({
@@ -50,6 +34,22 @@ const telemetrySchema = z.object({
 });
 
 export async function POST(request: Request) {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+
+  const redis = new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL!,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+  });
+
+  const ratelimit = new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(5, '1 h'),
+    analytics: false,
+  });
+
   try {
     // --- LAYER 1: RATE LIMITING ---
     const ip = (request.headers.get('x-forwarded-for') ?? 'anonymous').split(',')[0].trim();
