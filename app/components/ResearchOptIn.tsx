@@ -2,19 +2,11 @@
 
 import { useState } from 'react';
 import { Session } from '@/lib/types/session';
+import { bucketNormalized, isOptimizationCompleted } from '@/lib/utils/telemetry';
 
 interface ResearchOptInProps {
   session: Session;
   onDownloadFont: () => void;
-}
-
-type Bucket = 'low' | 'medium-low' | 'medium-high' | 'high';
-
-function bucketNormalized(value: number): Bucket {
-  if (value <= 0.25) return 'low';
-  if (value <= 0.5) return 'medium-low';
-  if (value <= 0.75) return 'medium-high';
-  return 'high';
 }
 
 function getEnvironment(): { os_family: string; device_type: string } {
@@ -77,8 +69,7 @@ export default function ResearchOptIn({ session, onDownloadFont }: ResearchOptIn
           doe_results: {
             significant_factors_count: session.doeResults!.significantFactors.length,
             significant_factors: session.doeResults!.significantFactors.join(','),
-            optimization_completed: !session.optimizationResult?.skipped &&
-                                    (session.optimizationResult?.trialsRun ?? 0) > 0,
+            optimization_completed: isOptimizationCompleted(session.optimizationResult),
             letter_spacing_bucket:  bucketNormalized(optimalValues.letterSpacing),
             word_spacing_bucket:    bucketNormalized(optimalValues.wordSpacing),
             line_height_bucket:     bucketNormalized(optimalValues.lineHeight),
