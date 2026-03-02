@@ -1,11 +1,13 @@
 'use client';
 
-import { DOEResults, OptimizationResult } from '@/lib/types/session';
+import { DOEResults, OptimizationResult, Session } from '@/lib/types/session';
 import { normalizedToCSS, describeNormalizedParams, NormalizedParams } from '@/lib/doe/bayesianOptimizer';
+import ResearchOptIn from '@/components/ResearchOptIn';
 
 interface ResultsScreenProps {
   doeResults: DOEResults;
   optimizationResult?: OptimizationResult;
+  session?: Session;
   onDownloadFont: () => void;
   onStartOver: () => void;
 }
@@ -13,6 +15,7 @@ interface ResultsScreenProps {
 export default function ResultsScreen({
   doeResults,
   optimizationResult,
+  session,
   onDownloadFont,
   onStartOver,
 }: ResultsScreenProps) {
@@ -247,13 +250,17 @@ export default function ResultsScreen({
           Download your custom font and settings in one click. Includes font file,
           CSS stylesheet, and JSON settings for the Chrome extension.
         </p>
-        <button
-          type="button"
-          onClick={onDownloadFont}
-          className="bg-cream text-dark-blue px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors shadow-lg"
-        >
-          ⬇️ Download All Files
-        </button>
+        {session ? (
+          <ResearchOptIn session={session} onDownloadFont={onDownloadFont} />
+        ) : (
+          <button
+            type="button"
+            onClick={onDownloadFont}
+            className="bg-cream text-dark-blue px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors shadow-lg"
+          >
+            ⬇️ Download All Files
+          </button>
+        )}
         <p className="text-xs text-blue-200 mt-4">
           Free for personal use. Based on OpenDyslexic (open source).
         </p>

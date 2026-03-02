@@ -481,6 +481,7 @@ export default function TestPage() {
           <ResultsScreen
             doeResults={session.doeResults}
             optimizationResult={session.optimizationResult}
+            session={session}
             onDownloadFont={handleDownloadFont}
             onStartOver={handleStartOver}
           />

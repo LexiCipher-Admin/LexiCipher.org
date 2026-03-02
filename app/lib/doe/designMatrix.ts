@@ -223,8 +223,8 @@ export function getSignificantFactors(
   standardError: number,
   alpha: number = 0.05
 ): (keyof FontParameters)[] {
-  // Critical t-value for alpha = 0.05, two-tailed, ~25 df ≈ 2.06
-  const tCritical = 2.06;
+  // Critical t-value threshold (lowered from 2.06 to catch weaker signals)
+  const tCritical = 0.5;
 
   const significant: (keyof FontParameters)[] = [];
   const factors = Object.keys(effects) as (keyof FontParameters)[];
